@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portfolio Javas Alfreda</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Javas Alfreda Belva Yoga Pratama</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="other_activities.html">Other Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="projects-page">
+            <h1>My Projects</h1>
+
+            <div class="tabs-nav">
+                <button class="tab-link active" data-tab="work-projects">Work Project</button>
+                <button class="tab-link" data-tab="dashboard-projects">Dashboard</button>
+            </div>
+
+            <div id="work-projects" class="tab-content active">
+                <article class="activity-category">
+                    <h2>Work Projects</h2>
+
+                    <div class="work-project-summary-grid">
+                        <div class="summary-card" data-target="detail-project1">
+                            <div class="summary-card-image-container">
+                                <img src="images/project1.jpg" alt="Analisis Sentimen Ulasan Produk E-commerce">
+                            </div>
+                            <h3>Analisis Sentimen Ulasan Produk E-commerce</h3>
+                            <p class="summary-card-tools">Python, NLTK, Scikit-learn</p>
+                        </div>
+
+                        <div class="summary-card" data-target="detail-project3">
+                            <div class="summary-card-image-container">
+                                <img src="images/project3.jpg" alt="Automation of Fraud Checking System">
+                            </div>
+                            <h3>Automation of Fraud Checking System at Bukalapak</h3>
+                            <p class="summary-card-tools">Spreadsheet, BigQuery, Python</p>
+                        </div>
+                        
+                        <div class="summary-card" data-target="detail-project4">
+                            <div class="summary-card-image-container">
+                                <img src="images/project4.jpg" alt="Automation of GCP Hardening Checking System">
+                            </div>
+                            <h3>Automation of GCP Hardening Checking System at Bukalapak</h3>
+                            <p class="summary-card-tools">Spreadsheet, BigQuery, Python</p>
+                        </div>
+
+                        <div class="summary-card" data-target="detail-project5">
+                            <div class="summary-card-image-container">
+                                <img src="images/project5.jpg" alt="Automation of Flagging System at LinkAja">
+                            </div>
+                            <h3>Automation of Flagging System at LinkAja</h3>
+                            <p class="summary-card-tools">Excel, BigQuery, Looker</p>
+                        </div>
+
+                        <div class="summary-card" data-target="detail-project6">
+                            <div class="summary-card-image-container">
+                                <img src="images/project6.jpg" alt="Tech Annual Risk Assessment Project">
+                            </div>
+                            <h3>Tech Annual Risk Assessment Project at Bukalapak</h3>
+                            <p class="summary-card-tools">Risk Assessment, Archer</p>
+                        </div>
+                        </div>
+
+                    <div class="detailed-projects-container">
+                        <article class="project-item project-item-detailed-view" id="detail-project1">
+                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
+                            <img src="images/project1.jpg" alt="Gambar project Analisis Sentimen" class="project-image">
+                            <div class="project-content">
+                                <h2>Analisis Sentimen Ulasan Produk E-commerce</h2>
+                                <p class="project-meta"><strong>Tools:</strong> Python (Pandas, NLTK, Scikit-learn), Jupyter Notebook, Matplotlib</p>
+                                <p><strong>Deskripsi:</strong> project ini bertujuan untuk menganalisis sentimen dari ribuan ulasan produk e-commerce untuk mengidentifikasi kekuatan dan kelemahan produk berdasarkan feedback pelanggan. Metodologi yang digunakan meliputi pra-pemrosesan teks, klasifikasi sentimen (positif, negatif, netral), dan visualisasi hasil.</p>
+                                <p><strong>Hasil Utama:</strong></p>
+                                <ul>
+                                    <li>Mengidentifikasi aspek produk yang paling sering mendapat ulasan negatif (misalnya, 'kualitas bahan', 'pengiriman lama').</li>
+                                    <li>Menemukan bahwa fitur 'X' sangat disukai pelanggan.</li>
+                                    <li>Memberikan rekomendasi untuk perbaikan produk dan layanan.</li>
+                                </ul>
+                                <a href="https://github.com/javasalfredabyp/project-sentimen" target="_blank" class="cta-button small">Lihat di GitHub</a>
+                            </div>
+                        </article>
+
+                        <article class="project-item project-item-detailed-view" id="detail-project3">
+                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
+                            <img src="images/project3.jpg" alt="Gambar Project 3 Automation Fraud Checking" class="project-image">
+                            <div class="project-content">
+                                <h2>Automation of Fraud Checking System at Bukalapak</h2>
+                                <p class="project-meta"><strong>Tools:</strong> Automation, Spreadsheet, BigQuery, Python, Looker Studio.</p>
+                                <p><strong>Description:</strong> Developed and implemented an automated fraud checking system at Bukalapak to enhance efficiency, accuracy, and reduce potential losses from fraudulent transactions.</p>
+                                <p><strong>Steps:</strong></p>
+                                <ul>
+                                    <li>Needs Analysis: Collaborated with product and relevant teams to understand existing processes.</li>                      
+                                    <li>System Design: Integrated Spreadsheet, BigQuery, Python, GitLab, and Looker Studio, utilizing Pub/Sub, Docker, and Airflow.</li>
+                                    <li>Implementation: Automated data processing in BigQuery, applied fraud detection logic in Python, and visualized results in Looker Studio for real-time monitoring.</li>
+                                    <li>Optimization: Improved system performance for handling large data volumes efficiently.</li>
+                                    <li>Validation & Testing: Ensured system accuracy and reliability.</li>
+                                    <li>Documentation: Maintained detailed records in Confluence for cross-team accessibility.</li>
+                                </ul>
+                                <p><strong>Results:</strong> Delivered a robust system that streamlined fraud detection, minimized manual tasks, provided real-time, accurate reporting, and enhancing operational efficiency up to 90%.</p>
+                                <a href="https://github.com/javasalfredabyp/fraud-checking-bukalapak" target="_blank" class="cta-button small">Lihat di GitHub</a>
+                            </div>
+                        </article>
+                        
+                        <article class="project-item project-item-detailed-view" id="detail-project4">
+                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
+                            <img src="images/project4.jpg" alt="Gambar Project 4 GCP Hardening" class="project-image">
+                            <div class="project-content">
+                                <h2>Automation of GCP Hardening Checking System at Bukalapak</h2>
+                                <p class="project-meta"><strong>Tools:</strong> Automation, Spreadsheet, BigQuery, Python, GitLab, Looker Studio.</p>
+                                <p><strong>Description:</strong> Developed and implemented an automated security checking (hardening) system for Bukalapak’s Google Cloud Platform (GCP) to enhance security and ensure compliance with internal policies and external regulations (e.g., UU PDP, GDPR).</p>
+                                <p><strong>Steps:</strong></p>
+                                <ul>
+                                    <li>Needs Analysis: Collaborated with product and relevant teams to understand existing processes.</li>               
+                                    <li>System Design: [Isi detail desain sistem Anda di sini]</li>
+                                    <li>Implementation: [Isi detail implementasi Anda di sini]</li>
+                                    <li>Optimization: [Isi detail optimasi Anda di sini]</li>
+                                    <li>Validation & Testing: [Isi detail validasi dan testing Anda di sini]</li>
+                                    <li>Documentation: [Isi detail dokumentasi Anda di sini]</li>
+                                </ul>
+                                <p><strong>Results:</strong> Delivered a proactive system for continuous security monitoring, early risk detection, and improved compliance, significantly boosting security practices in Bukalapak’s GCP environment.</p>
+                                <a href="https://github.com/javasalfredabyp/gcp-hardening-bukalapak" target="_blank" class="cta-button small">Lihat di GitHub</a>
+                            </div>
+                        </article>
+
+                        <article class="project-item project-item-detailed-view" id="detail-project5">
+                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
+                            <img src="images/project5.jpg" alt="Gambar Project 5 Flagging System LinkAja" class="project-image">
+                            <div class="project-content">
+                                <h2>Automation of Flagging System at LinkAja</h2>
+                                <p class="project-meta"><strong>Tools:</strong> Automation, Excel, BigQuery, GitLab, Looker.</p>
+                                <p><strong>Description:</strong> Developed and implemented an automated flagging system in the LinkAja app to differentiate between “whitelisted” and “blacklisted” users who are eligible for further actions, such as promotion flagging, target disbursement, new feature target, and more, thereby eliminating manual processes and enhancing efficiency.</p>
+                                <p><strong>Steps:</strong></p>
+                                <ul>
+                                    <li>Data Assessment & Collaboration: Worked with relevant teams to analyze data needs.</li>
+                                    <li>Procedure Development: Searched for source tables in BigQuery and built temporary tables for non-BigQuery data, then developed procedures in BigQuery.</li>
+                                    <li>Automation: Integrated the process with Airflow for full automation.</li>
+                                    <li>Monitoring & Visualization: Set up real-time monitoring in Looker.</li>
+                                    <li>Validation & Testing: Ensured system accuracy and reliability.</li>
+                                    <li>Documentation: Maintained detailed records in Confluence for cross-team accessibility.</li>
+                                </ul>
+                                <p><strong>Results:</strong> Achieved nearly 100% operational efficiency, minimizing manual tasks and providing accurate, real-time reporting.</p>
+                                <a href="https://github.com/javasalfredabyp/flagging-system-linkaja" target="_blank" class="cta-button small">Lihat di GitHub</a>
+                            </div>
+                        </article>
+
+                        <article class="project-item project-item-detailed-view" id="detail-project6">
+                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
+                            <img src="images/project6.jpg" alt="Gambar Project 6 Risk Assessment Bukalapak" class="project-image">
+                            <div class="project-content">
+                                <h2>Tech Annual Risk Assessment Project at Bukalapak</h2>
+                                <p class="project-meta"><strong>Tools:</strong> Data Security, Risk Assessment, Archer, Spreadsheet.</p>
+                                <p><strong>Description:</strong> Conducted annual risk assessments within the technology domain at Bukalapak. Assisted multiple business units, including Buka Investasi Bersama, BukaSend & Logistics, Lapak Gaming, Financing Marketplace, and the Data Engineering Team — in carrying out their annual risk assessments.</p>
+                                <p><strong>Steps:</strong></p>
+                                <ul>
+                                    <li>Led a structured risk assessment process at Bukalapak.</li>
+                                    <li>Involving coordination with business units</li>
+                                    <li>Identification and analysis of technology-related risks using the RSCA format from Archer.</li>
+                                    <li>Development of mitigation strategies, comprehensive documentation via the Archer Dashboard.</li>
+                                    <li>Continuous follow-up to monitor risk mitigation progress.</li>
+                                </ul>
+                                <p><strong>Results:</strong> The project provided clear insights into technological risks across Bukalapak's business units and led to effective mitigation strategies, resulting in stronger system resilience, better regulatory compliance, and improved risk management.</p>
+                                </div>
+                        </article>
+                        </div>
+                </article>
+            </div>
+
+            <div id="dashboard-projects" class="tab-content">
+                <article class="activity-category">
+                    <h2>Dashboard Portfolio</h2>
+                    <div class="dashboard-grid">
+                        <a href="https://public.tableau.com/app/profile/javasalfredabyp/viz/DashboardChurnXYZ" target="_blank" class="dashboard-card">
+                            <div class="dashboard-image-container">
+                                <img src="images/dashboard_churn_pelanggan.jpg" alt="Dashboard Prediksi Churn Pelanggan">
+                            </div>
+                            <h3>Prediksi Churn Pelanggan (Interaktif)</h3>
+                            <p class="dashboard-tools">Tools: Tableau, SQL, Python</p>
+                        </a>
+                        </div>
+                     <p class="placeholder-text" style="text-align:center; margin-top: 40px; font-style:italic; color: #777;">
+                        More dashboard showcases will be added soon.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Javas Alfreda Belva Yoga Pratama. Semua Hak Dilindungi.</p>
+        <p>
+            <a href="https://wa.me/6285878513900" target="_blank">WhatsApp</a> |
+            <a href="mailto:javasalfreda@gmail.com" target="_blank">Email</a> |
+            <a href="https://www.linkedin.com/in/javasalfredabyp/" target="_blank">LinkedIn</a> |
+            <a href="https://www.instagram.com/javasalfreda_byp/" target="_blank">Instagram</a> |
+            <a href="https://github.com/javasalfredabyp/" target="_blank">GitHub</a>
+        </p>
+    </footer>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+    <script>
+        // JavaScript untuk Tab Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content'); // Ubah nama variabel agar tidak konflik
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    const targetContentId = tab.getAttribute('data-tab');
+                    document.getElementById(targetContentId).classList.add('active');
+                });
+            });
+
+            // JavaScript untuk Work Project Summary Card Click & Back Button
+            const summaryCards = document.querySelectorAll('#work-projects .summary-card');
+            const workProjectSummaryGrid = document.querySelector('#work-projects .work-project-summary-grid');
+            const detailedProjectsContainer = document.querySelector('#work-projects .detailed-projects-container');
+            const detailedProjectViews = document.querySelectorAll('#work-projects .project-item-detailed-view');
+            const backToGridButtons = document.querySelectorAll('#work-projects .back-to-grid-btn');
+
+            summaryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    if (workProjectSummaryGrid && detailedProjectsContainer) {
+                        workProjectSummaryGrid.style.display = 'none'; // Sembunyikan grid summary
+                        detailedProjectsContainer.style.display = 'block'; // Tampilkan kontainer detail
+                    }
+
+                    detailedProjectViews.forEach(view => {
+                        if (view.id === targetId) {
+                            view.style.display = 'flex'; // Atau 'block' sesuai styling .project-item awal
+                        } else {
+                            view.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            backToGridButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (workProjectSummaryGrid && detailedProjectsContainer) {
+                        detailedProjectsContainer.style.display = 'none'; // Sembunyikan kontainer detail
+                        detailedProjectViews.forEach(view => view.style.display = 'none'); // Sembunyikan semua detail
+                        workProjectSummaryGrid.style.display = 'grid'; // Tampilkan kembali grid summary
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

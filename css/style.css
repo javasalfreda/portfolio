@@ -1,0 +1,1322 @@
+/* Reset Dasar & Gaya Global */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header dan Navigasi */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #575757;
+}
+
+/* Main Content */
+main {
+    padding-top: 20px; /* Padding untuk konten di bawah header sticky */
+}
+
+/* Hero Section (Beranda - Jika ada, contoh) */
+#hero {
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* Contoh gradien biru */
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero .hero-content {
+    max-width: 800px;
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+#hero .tagline {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+#hero .summary {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.profile-pic-large { /* Untuk Beranda */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol Call to Action (CTA) */
+.cta-button {
+    display: inline-block;
+    background-color: #2193b0; /* Warna coral */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #007bff;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid white; /* Untuk hero section */
+    color: white;
+}
+
+.cta-button.secondary:hover {
+    background-color: white;
+    color: #007bff;
+}
+
+/* Untuk tombol di luar hero */
+main .cta-button.secondary, 
+footer .cta-button.secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+main .cta-button.secondary:hover, 
+footer .cta-button.secondary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.cta-button.small { /* Untuk tombol di detail proyek */
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* Pratinjau Proyek di Beranda (Jika ada, contoh) */
+#featured-projects-preview {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff; /* Pastikan ini ada jika #featured-projects-preview digunakan */
+}
+
+#featured-projects-preview h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.project-grid { /* Digunakan di Beranda untuk pratinjau proyek */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.project-card-preview {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-preview img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.project-card-preview h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-card-preview p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.project-card-preview a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card-preview a:hover {
+    text-decoration: underline;
+}
+
+.view-all-projects { /* Tombol di bawah pratinjau proyek */
+    margin-top: 20px;
+}
+
+/* Halaman Tentang Saya (About Me Page) */
+#about-me {
+    text-align: center; /* Kontainer utama untuk alignment judul */
+    padding: 30px 0;
+}
+
+#about-me h1, 
+#projects-list h1, /* Untuk halaman Proyek */
+#contact-form-section h1, /* Untuk halaman Kontak */
+#social-links h1 { /* Untuk halaman Kontak */
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Biru tua */
+}
+
+.profile-pic-medium { /* Untuk Halaman Tentang Saya */
+    width: 1050px; 
+    height: 200px;
+    border-radius: 8px; 
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi, mungkin ada cropping */
+    margin: 15px auto 25px auto; /* Margin untuk centering */
+    display: block; /* Untuk centering dengan margin auto */
+    border: 3px solid #ddd; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opsional: tambahkan sedikit bayangan */
+}
+
+#about-me p { /* Paragraf utama di Tentang Saya */
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.7;
+}
+
+#about-me h2 { /* Sub-judul di Tentang Saya (Skills, Interests, Experience) */
+    font-size: 2em;
+    color: #34495e; /* Biru sedikit lebih muda */
+    margin-top: 40px;
+    margin-bottom: 25px; /* Sedikit lebih banyak ruang bawah */
+    border-bottom: 2px solid #6dd5ed;
+    padding-bottom: 8px; /* Sedikit lebih banyak padding */
+    display: inline-block; /* Agar border-bottom hanya sepanjang teks */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Sedikit lebih besar */
+    text-align: left;
+    margin-top: 20px;
+}
+
+.skill-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #6dd5ed;
+}
+
+.skill-item h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 0; /* Hapus margin atas default */
+    margin-bottom: 8px;
+}
+
+.skill-item p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Work Experience & Organizational Experience Sections */
+.work-experience-grid,
+.organizational-experience-grid,
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Sedikit lebih lebar minmax */
+    gap: 25px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.work-item,
+.org-item,
+.edu-item {
+    background-color: #fff;
+    padding: 20px; /* Sedikit lebih banyak padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Bayangan lebih soft */
+    display: flex;
+    align-items: flex-start; /* Logo align top dengan detail */
+    gap: 20px; /* Jarak antar logo dan detail */
+}
+
+.work-logo,
+.org-logo,
+.edu-logo {
+    width: 60px;
+    height: 60px; /* Buat konsisten */
+    object-fit: contain;
+    border-radius: 5px;
+    flex-shrink: 0; /* Mencegah logo mengecil */
+}
+
+.work-details,
+.org-details,
+.edu-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Agar detail mengisi sisa ruang */
+}
+
+.work-details h3,
+.org-details h3,
+.edu-details h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.work-details p, /* Untuk paragraf umum di work-details (jika ada selain title & duration) */
+.org-details p,
+.edu-details p {  /* Untuk paragraf umum di org-details (jika ada selain role & duration) */
+    font-size: 1em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.work-title,
+.org-role,
+.edu-role {
+    font-style: italic;
+    font-size: 1em; /* Pastikan ukuran konsisten */
+    color: #555;   /* Pastikan warna konsisten */
+    margin-bottom: 3px;
+}
+
+.work-duration, /* Kelas khusus untuk durasi kerja */
+.org-duration,
+.edu-duration {   /* Kelas khusus untuk durasi organisasi */
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 3px; /* Tambahkan margin jika ada tombol "More..." setelahnya */
+}
+
+/* Tombol "More..." */
+.toggle-details-btn {
+    display: inline-block;
+    margin-top: 10px; /* Jarak dari durasi */
+    padding: 5px 10px; /* Padding sedikit lebih besar */
+    font-size: 0.9em;  /* Ukuran font disesuaikan */
+    color: #6dd5ed;
+    text-decoration: none;
+    border: 1px solid #6dd5ed;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-details-btn:hover {
+    background-color: #6dd5ed;
+    color: white;
+}
+
+/* Deskripsi Detail untuk Work & Org Experience */
+.work-description,
+.org-description,
+.edu-description {
+    display: none;
+    margin-top: 12px; /* Jarak dari tombol "More..." */
+    padding: 12px;    /* Padding sedikit lebih besar */
+    background-color: #f8f8f8; /* Latar sedikit beda dari item utama */
+    border-radius: 6px;
+    font-size: 0.9em;
+    line-height: 1.6; /* Line height disesuaikan */
+}
+
+.work-description {
+    border-left: 4px solid #6dd5ed; /* Aksen garis kiri untuk work */
+}
+
+.org-description {
+    border-left: 4px solid #6dd5ed; /* Aksen garis kiri untuk org */
+}
+
+.edu-description {
+    border-left: 4px solid #6dd5ed; /* Aksen garis kiri untuk edu */
+}
+
+.work-description p,
+.org-description p,
+.edu-description p {
+    margin-top: 0;
+    margin-bottom: 10px; /* Jarak antar paragraf di deskripsi */
+    color: #444;
+}
+
+.work-description p:last-child,
+.org-description p:last-child
+.edu-description p:last-child {
+    margin-bottom: 0;
+}
+
+.work-description ul,
+.org-description ul,
+.edu-description ul {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.work-description ul li,
+.org-description ul li,
+.edu-description ul li {
+    margin-bottom: 5px; /* Jarak antar list item */
+    color: #555;
+}
+
+/* Halaman Proyek (Projects Page) */
+.project-item { /* Ini untuk daftar proyek di halaman projects.html */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+}
+
+.project-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.project-content h2 {
+    font-size: 2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.project-content p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.project-content ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.project-content ul li {
+    margin-bottom: 8px;
+}
+
+/* Halaman Kontak (Contact Page) */
+.contact-form {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 24px); /* Sesuaikan dengan padding 12px * 2 */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Tambahkan ini agar padding tidak menambah width */
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button[type="submit"] { /* Tombol Kirim Pesan */
+    width: 100%;
+    /* Styling diwarisi dari .cta-button, jika ingin spesifik bisa ditambahkan di sini */
+}
+
+#social-links {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+#social-links h2 {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+footer a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Aturan Responsif Umum */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+
+    #hero h1 { /* Jika Hero Section digunakan */
+        font-size: 2.5em;
+    }
+
+    #hero .tagline { /* Jika Hero Section digunakan */
+        font-size: 1.3em;
+    }
+
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .project-item { /* Untuk halaman projects.html */
+        flex-direction: column;
+    }
+
+    .project-image { /* Untuk halaman projects.html */
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Skill jadi satu kolom */
+    }
+}
+
+/* Aturan Responsif Spesifik untuk Work & Org Items */
+@media (max-width: 600px) {
+    .work-item,
+    .org-item,
+    .edu-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .work-logo,
+    .org-logo,
+    .edu-logo {
+        width: 70px; /* Ukuran logo bisa disesuaikan untuk mobile */
+        height: 70px;
+        margin-bottom: 15px; /* Jarak logo ke detail di mobile */
+    }
+}
+
+/* Explore My Works Section */
+#explore-works {
+    padding: 50px 0;
+    background-color: #f8f9fa; /* Latar belakang section sedikit abu-abu agar kartu menonjol */
+    text-align: center;
+}
+
+#explore-works h2 {
+    font-size: 2.5em;
+    color: #333; /* Warna judul tetap gelap agar kontras */
+    margin-bottom: 40px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.work-card {
+    background-color: #eaf8fb; /* Biru sangat pucat, turunan dari #6dd5ed */
+    border: 1px solid #b3e0ed; /* Border biru muda, turunan dari #6dd5ed */
+    border-radius: 8px;
+    padding: 25px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 220px;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Bayangan netral saat hover */
+}
+
+.work-card.highlighted {
+    border: 2px solid #2193b0; /* Border biru tua (dari hero) untuk highlight */
+    box-shadow: 0 4px 12px rgba(33, 147, 176, 0.25); /* Bayangan biru lembut (dari hero) */
+}
+
+.work-card-icon {
+    font-size: 2.5em;
+    color: #2193b0; /* Warna biru tua (dari hero) untuk ikon */
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.work-card h3 {
+    font-size: 1.25em;
+    color: #333; /* Warna judul kartu tetap gelap */
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.work-card p {
+    font-size: 0.9em;
+    color: #555; /* Warna deskripsi tetap netral */
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+/* Penyesuaian grid untuk layar yang lebih besar (mirip gambar) */
+@media (min-width: 768px) {
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .works-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .works-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Modifikasi untuk .activity-item dan penambahan gaya untuk slot gambar */
+.activity-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px; /* Tambah margin bawah sedikit */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Bayangan sedikit lebih jelas */
+    border-left: 5px solid #6dd5ed;
+    display: flex; /* Menggunakan Flexbox untuk layout berdampingan */
+    gap: 25px; /* Jarak antara teks dan gambar */
+    align-items: flex-start; /* Rata atas untuk teks dan gambar */
+}
+
+.activity-text-content {
+    flex: 2; /* Konten teks mengambil porsi lebih besar, misal 2/3 */
+    min-width: 0; /* Diperlukan untuk flex item agar bisa mengecil dengan benar */
+}
+
+.activity-image-slot {
+    flex: 1; /* Slot gambar mengambil porsi lebih kecil, misal 1/3 */
+    min-width: 0; /* Diperlukan untuk flex item */
+    display: flex; /* Untuk alignment gambar di dalamnya jika diperlukan */
+    justify-content: center; /* Menengahkan gambar jika lebih kecil dari slot */
+    align-items: flex-start; /* Rata atas gambar */
+}
+
+.activity-image-slot img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px; /* Sudut membulat untuk gambar */
+    object-fit: cover; /* Pastikan gambar menutupi area tanpa distorsi, atau 'contain' jika ingin keseluruhan gambar terlihat */
+    max-height: 250px; /* Batas tinggi maksimum gambar agar tidak terlalu dominan (opsional, sesuaikan) */
+}
+
+/* Gaya yang sudah ada (pastikan tidak ada duplikasi atau konflik) */
+.activity-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.activity-item .activity-info {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.activity-item .activity-info strong {
+    color: #333;
+}
+
+.activity-description {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #444;
+    line-height: 1.6;
+}
+
+.activity-description ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.activity-description ul li {
+    margin-bottom: 5px;
+}
+
+
+/* Responsif untuk .activity-item */
+@media (max-width: 768px) {
+    .activity-item {
+        flex-direction: column; /* Susun teks dan gambar secara vertikal di layar kecil */
+        gap: 20px;
+    }
+
+    .activity-text-content,
+    .activity-image-slot {
+        flex: none; /* Hapus properti flex-basis/grow agar lebar penuh */
+        width: 100%;
+    }
+
+    .activity-image-slot img {
+        max-height: 200px; /* Sesuaikan tinggi gambar untuk mobile */
+        width: 100%; /* Gambar bisa dibuat lebar penuh di mobile */
+        object-fit: cover; /* Atau 'contain' */
+    }
+}
+
+/* Tab Navigation for Other Activities */
+.tabs-nav {
+    display: flex;
+    justify-content: center; /* Tombol tab di tengah */
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee; /* Garis bawah pemisah tab */
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent; /* Indikator tab non-aktif */
+    font-size: 1.1em;
+    color: #555;
+    margin: 0 5px; /* Jarak antar tombol tab */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.tab-link:hover {
+    color: #2193b0; /* Warna biru saat hover */
+}
+
+.tab-link.active {
+    color: #2193b0; /* Warna biru untuk tab aktif */
+    font-weight: 600;
+    border-bottom-color: #2193b0; /* Indikator biru untuk tab aktif */
+}
+
+.tab-content {
+    display: none; /* Sembunyikan semua konten tab secara default */
+}
+
+.tab-content.active {
+    display: block; /* Tampilkan konten tab yang aktif */
+}
+
+/* Penyesuaian untuk activity-category di dalam tab */
+.tab-content .activity-category h2 {
+    /* Judul kategori (Mentoring Experience, Speaking Activities, Community Involvement) */
+    font-size: 2.2em; /* Sedikit lebih besar jika diperlukan */
+    color: #333;
+    margin-top: 10px; /* Kurangi margin atas karena sudah ada spasi dari tab nav */
+    margin-bottom: 30px;
+    text-align: left; /* Judul kategori rata kiri */
+    border-bottom: 2px solid #2193b0; /* Konsisten dengan subjudul lain */
+    padding-bottom: 8px;
+    display: inline-block; /* Agar border hanya sepanjang teks */
+}
+
+/* Speaking Activities Section Styling */
+.speaking-section-subtitle {
+    font-size: 1.6em;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.speaking-gallery {
+    display: flex;
+    overflow-x: auto; /* Memungkinkan scroll horizontal jika gambar banyak */
+    gap: 15px;
+    padding-bottom: 15px; /* Ruang untuk scrollbar jika muncul */
+    margin-bottom: 30px;
+}
+
+.speaking-gallery img {
+    height: 200px; /* Sesuaikan tinggi gambar highlight */
+    width: auto;   /* Lebar otomatis mengikuti rasio aspek */
+    max-width: none; /* Hapus max-width:100% agar bisa scroll horizontal */
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.speaking-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Kartu sedikit lebih lebar */
+    gap: 20px;
+}
+
+.speaking-card {
+    background-color: #f8f9fa; /* Latar belakang kartu agak abu-abu */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.speaking-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+.speaking-card-icon {
+    font-size: 1.8em; /* Ukuran ikon mikrofon */
+    color: #2193b0; /* Warna biru untuk ikon */
+    flex-shrink: 0; /* Agar ikon tidak mengecil */
+}
+
+.speaking-card-details {
+    text-align: left;
+}
+
+.speaking-card-details h4 {
+    font-size: 1.15em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.speaking-card-details p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsif untuk Tab Navigation */
+@media (max-width: 600px) {
+    .tabs-nav {
+        flex-wrap: wrap; /* Biarkan tab membungkus jika tidak muat */
+    }
+    .tab-link {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+    .speaking-gallery img {
+        height: 160px;
+    }
+}
+
+/* Mentoring Summary Section Styling */
+.mentoring-summary-section {
+    background-color: #eaf8fb; /* Biru sangat pucat, konsisten dengan .work-card */
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 40px; /* Jarak ke bagian "Mentoring Experience" */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.mentoring-profile-pic {
+    width: 100px; /* Sesuaikan ukuran foto profil */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    border: 3px solid #fff; /* Border putih di sekitar foto */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mentoring-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Jarak antar badge */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Agar badge bisa wrap di layar kecil */
+}
+
+.badge-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara ikon dan teks di badge */
+    font-size: 1.1em;
+    color: #2193b0; /* Warna biru tua untuk teks badge */
+    font-weight: 600;
+}
+
+.badge-icon {
+    font-size: 1.3em; /* Ukuran ikon badge */
+    /* Warna ikon diatur oleh color dari .badge-item */
+}
+
+.mentoring-stats-text {
+    font-size: 1.1em;
+    color: #333; /* Warna teks statistik lebih gelap */
+    margin-bottom: 30px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mentoring-soft-skills {
+    display: flex;
+    justify-content: space-around; /* Atau space-between jika ingin rapat ke tepi */
+    gap: 20px; /* Jarak antar kartu soft skill */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Agar kartu bisa wrap */
+}
+
+.soft-skill-item {
+    background-color: #fff; /* Kartu soft skill berlatar putih */
+    padding: 20px 15px;
+    border-radius: 8px;
+    border: 1px solid #cce7ff; /* Border biru muda untuk kartu */
+    flex: 1; /* Agar kartu سعی untuk mengambil lebar yang sama */
+    min-width: 220px; /* Lebar minimum kartu sebelum wrap */
+    max-width: 280px; /* Lebar maksimum kartu */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    text-align: center; /* Teks di dalam kartu rata tengah */
+}
+
+.soft-skill-icon-wrapper {
+    display: inline-flex; /* Membuat wrapper seukuran ikon */
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #e0f2fe; /* Latar ikon biru muda */
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.soft-skill-icon {
+    font-size: 1.6em; /* Ukuran ikon soft skill */
+    color: #2193b0; /* Warna biru tua untuk ikon */
+}
+
+.soft-skill-item h4 {
+    font-size: 1.15em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.soft-skill-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.mentoring-cta {
+    /* Menggunakan gaya .cta-button yang sudah ada, hanya pastikan warnanya biru */
+    background-color: #2193b0; /* Warna utama biru */
+    color: white;
+    padding: 12px 28px; /* Sesuaikan padding jika perlu */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px; /* Konsisten dengan .cta-button lain */
+    display: inline-flex; /* Untuk alignment ikon */
+    align-items: center;
+    gap: 8px; /* Jarak teks dan ikon di tombol */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.mentoring-cta:hover {
+    background-color: #1c7b9a; /* Warna biru lebih gelap saat hover */
+    transform: translateY(-2px);
+}
+
+.external-link-icon {
+    font-size: 1em; /* Sesuaikan ukuran ikon external link */
+}
+
+/* Penyesuaian Responsif (jika diperlukan tambahan) */
+@media (max-width: 768px) {
+    .mentoring-badges {
+        gap: 15px;
+    }
+    .badge-item {
+        font-size: 1em;
+    }
+    .mentoring-stats-text {
+        font-size: 1em;
+    }
+    .mentoring-soft-skills {
+        flex-direction: column; /* Kartu soft skill jadi satu kolom */
+        align-items: center; /* Tengahkan kartu di layar kecil */
+    }
+    .soft-skill-item {
+        width: 100%; /* Lebar penuh untuk kartu di mobile */
+        max-width: 320px; /* Batas lebar agar tidak terlalu lebar di mobile landscape */
+        margin-bottom: 15px;
+    }
+    .soft-skill-item:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Dashboard Portfolio Section Styling */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Kartu akan mencoba lebar minimal 350px */
+    gap: 25px; /* Jarak antar kartu dashboard */
+    margin-top: 20px;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border: 1px solid #e0e6ed; /* Border biru sangat muda/abu-abu */
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden; /* Untuk memastikan border-radius berlaku pada gambar di dalamnya */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Konten kartu (gambar, judul) disusun vertikal */
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-image-container {
+    width: 100%;
+    background-color: #f0f4f8; /* Warna latar jika gambar tidak sepenuhnya menutupi */
+    /* aspect-ratio: 16/10; /* Anda bisa atur rasio aspek jika ingin gambar seragam tingginya */
+    overflow: hidden; /* Jika menggunakan object-fit cover pada gambar */
+}
+
+.dashboard-image-container img {
+    width: 100%;
+    height: auto;   /* Biarkan tinggi otomatis, atau atur tinggi tetap jika menggunakan aspect-ratio di container */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    object-fit: cover; /* Atau 'contain' jika ingin keseluruhan gambar terlihat */
+    /* Jika Anda mengatur aspect-ratio pada container, Anda mungkin ingin mengatur height: 100%; di sini */
+    min-height: 200px; /* Tinggi minimal untuk gambar pratinjau */
+}
+
+.dashboard-card h3 {
+    font-size: 1.2em; /* Ukuran judul dashboard */
+    color: #2c3e50;   /* Warna biru tua untuk judul */
+    margin: 15px 20px 10px 20px; /* Padding untuk judul */
+    text-align: center;
+    font-weight: 600;
+}
+
+.dashboard-card .dashboard-tools {
+    font-size: 0.85em;
+    color: #555;
+    text-align: center;
+    margin: 0 20px 15px 20px;
+    padding-top: 5px;
+    border-top: 1px dashed #e0e6ed; /* Garis pemisah sebelum tools */
+}
+
+/* Penyesuaian untuk layar yang lebih besar (misalnya, tetap 2 kolom) */
+@media (min-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr); /* Maksimal 2 kolom di layar besar */
+    }
+}
+
+/* --- Styling untuk Work Project Summary Grid & Cards --- */
+.work-project-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mirip dashboard-grid tapi bisa disesuaikan */
+    gap: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px; /* Jarak jika ada konten lain di bawahnya */
+}
+
+.summary-card {
+    background-color: #fff;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* Menandakan bisa diklik */
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card-image-container {
+    width: 100%;
+    height: 200px; /* TENTUKAN TINGGI TETAP DI SINI (misal 200px) */
+    overflow: hidden; /* Penting agar gambar tidak keluar dari kontainer jika lebih besar */
+    background-color: #f0f4f8; /* Warna latar jika gambar tidak menutupi sempurna (misal karena object-fit: contain) */
+    border-bottom: 1px solid #e0e6ed; /* Garis tipis pemisah antara gambar dan judul */
+}
+
+.summary-card-image-container img {
+    width: 100%;
+    height: 100%; /* Gambar mengisi tinggi dan lebar kontainer */
+    display: block;
+    object-fit: cover; /* Gambar akan menutupi area, menjaga rasio aspek, mungkin ada cropping. Alternatif: 'contain' */
+}
+
+/* Gaya yang sudah ada untuk .summary-card h3 dan .summary-card-tools tetap */
+.summary-card h3 {
+    font-size: 1.15em;
+    color: #2c3e50;
+    margin: 15px 20px 5px 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.summary-card .summary-card-tools {
+    font-size: 0.8em;
+    color: #555;
+    text-align: left;
+    margin: 0 20px 15px 20px;
+}
+
+/* Styling untuk Kontainer Detail Proyek dan Item Detail */
+.detailed-projects-container {
+    display: none; /* Awalnya tersembunyi */
+}
+
+.project-item-detailed-view {
+    display: none; /* Setiap item detail juga awalnya tersembunyi */
+    /* Gaya .project-item yang sudah ada akan berlaku saat 'display' diubah oleh JS */
+    margin-bottom: 30px; /* Beri jarak antar detail proyek jika beberapa bisa terbuka (meski skrip saat ini hanya 1) */
+    padding-top: 20px; /* Beri padding atas agar tidak terlalu mepet tombol back */
+    position: relative; /* Untuk positioning tombol back jika diperlukan */
+}
+
+.project-item-detailed-view.visible { /* Kelas untuk menampilkan item detail */
+    display: flex; /* Atau 'block', sesuaikan dengan gaya asli .project-item Anda */
+}
+
+.back-to-grid-btn {
+    /* Menggunakan gaya .cta-button atau buat gaya baru */
+    display: inline-block;
+    margin-bottom: 20px; /* Jarak ke konten detail proyek */
+    padding: 8px 15px;
+    font-size: 0.9em;
+    color: #2193b0;
+    background-color: transparent;
+    border: 1px solid #2193b0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-to-grid-btn:hover {
+    background-color: #2193b0;
+    color: white;
+}
+
+/* Penyesuaian agar .activity-category h2 tidak terlalu banyak margin jika grid kosong */
+#work-projects .activity-category .work-project-summary-grid + .detailed-projects-container {
+    /* Tidak ada gaya khusus diperlukan di sini dengan struktur saat ini */
+}
+
+/* Responsif untuk summary card jika perlu berbeda dari dashboard card */
+@media (min-width: 992px) {
+    .work-project-summary-grid {
+        /* grid-template-columns: repeat(3, 1fr); /* Contoh: 3 kolom untuk summary card di layar besar */
+    }
+}
