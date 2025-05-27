@@ -35,52 +35,64 @@
                 <article class="activity-category">
                     <h2>Work Projects</h2>
 
+                    <div class="filter-container" id="work-project-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="automation">Automation</button>
+                        <button class="filter-btn" data-filter="python">Python</button>
+                        <button class="filter-btn" data-filter="bigquery">BigQuery</button>
+                        <button class="filter-btn" data-filter="lookerstudio">Looker Studio</button>
+                        <button class="filter-btn" data-filter="looker">Looker</button>
+                        <button class="filter-btn" data-filter="others-work">Others</button>
+                    </div>
+
                     <div class="work-project-summary-grid">
-                        <div class="summary-card" data-target="detail-project1">
+                        <div class="summary-card" data-target="detail-project1" data-tools="python nltk scikitlearn matplotlib">
                             <div class="summary-card-image-container">
-                                <img src="images/project1.jpg" alt="Analisis Sentimen Ulasan Produk E-commerce">
+                                <img src="images/projects/project1.jpg" alt="Analisis Sentimen Ulasan Produk E-commerce">
                             </div>
                             <h3>Analisis Sentimen Ulasan Produk E-commerce</h3>
                             <p class="summary-card-tools">Python, NLTK, Scikit-learn</p>
                         </div>
 
-                        <div class="summary-card" data-target="detail-project3">
+                        <div class="summary-card" data-target="detail-project3" data-tools="automation spreadsheet bigquery python lookerstudio gitlab pubsub docker airflow">
                             <div class="summary-card-image-container">
-                                <img src="images/project3.jpg" alt="Automation of Fraud Checking System">
+                                <img src="images/projects/project3.jpg" alt="Automation of Fraud Checking System">
                             </div>
                             <h3>Automation of Fraud Checking System at Bukalapak</h3>
-                            <p class="summary-card-tools">Spreadsheet, BigQuery, Python</p>
+                            <p class="summary-card-tools">Spreadsheet, BigQuery, Python, Looker Studio</p>
                         </div>
                         
-                        <div class="summary-card" data-target="detail-project4">
+                        <div class="summary-card" data-target="detail-project4" data-tools="automation spreadsheet bigquery python gitlab lookerstudio gcp">
                             <div class="summary-card-image-container">
-                                <img src="images/project4.jpg" alt="Automation of GCP Hardening Checking System">
+                                <img src="images/projects/project4.jpg" alt="Automation of GCP Hardening Checking System">
                             </div>
                             <h3>Automation of GCP Hardening Checking System at Bukalapak</h3>
-                            <p class="summary-card-tools">Spreadsheet, BigQuery, Python</p>
+                            <p class="summary-card-tools">Spreadsheet, BigQuery, Python, Looker Studio</p>
                         </div>
 
-                        <div class="summary-card" data-target="detail-project5">
+                        <div class="summary-card" data-target="detail-project5" data-tools="automation excel bigquery gitlab looker airflow">
                             <div class="summary-card-image-container">
-                                <img src="images/project5.jpg" alt="Automation of Flagging System at LinkAja">
+                                <img src="images/projects/project5.jpg" alt="Automation of Flagging System at LinkAja">
                             </div>
                             <h3>Automation of Flagging System at LinkAja</h3>
                             <p class="summary-card-tools">Excel, BigQuery, Looker</p>
                         </div>
 
-                        <div class="summary-card" data-target="detail-project6">
+                        <div class="summary-card" data-target="detail-project6" data-tools="datasecurity riskassessment archer spreadsheet others-work">
                             <div class="summary-card-image-container">
-                                <img src="images/project6.jpg" alt="Tech Annual Risk Assessment Project">
+                                <img src="images/projects/project6.jpg" alt="Tech Annual Risk Assessment Project">
                             </div>
                             <h3>Tech Annual Risk Assessment Project at Bukalapak</h3>
                             <p class="summary-card-tools">Risk Assessment, Archer</p>
                         </div>
-                        </div>
+                    </div>
 
                     <div class="detailed-projects-container">
                         <article class="project-item project-item-detailed-view" id="detail-project1">
-                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
-                            <img src="images/project1.jpg" alt="Gambar project Analisis Sentimen" class="project-image">
+                            <button class="back-to-grid-btn">&larr; Back to Project List</button>
+                            <div class="project-media-column">
+                                <img src="images/projects/project1.jpg" alt="Analisis Sentimen - Tampilan Utama" class="project-main-image">
+                                </div>
                             <div class="project-content">
                                 <h2>Analisis Sentimen Ulasan Produk E-commerce</h2>
                                 <p class="project-meta"><strong>Tools:</strong> Python (Pandas, NLTK, Scikit-learn), Jupyter Notebook, Matplotlib</p>
@@ -94,10 +106,11 @@
                                 <a href="https://github.com/javasalfredabyp/project-sentimen" target="_blank" class="cta-button small">Lihat di GitHub</a>
                             </div>
                         </article>
-
                         <article class="project-item project-item-detailed-view" id="detail-project3">
-                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
-                            <img src="images/project3.jpg" alt="Gambar Project 3 Automation Fraud Checking" class="project-image">
+                            <button class="back-to-grid-btn">&larr; Back to Project List</button>
+                            <div class="project-media-column">
+                                <img src="images/projects/project3.jpg" alt="Gambar Project 3 Automation Fraud Checking" class="project-main-image">
+                            </div>
                             <div class="project-content">
                                 <h2>Automation of Fraud Checking System at Bukalapak</h2>
                                 <p class="project-meta"><strong>Tools:</strong> Automation, Spreadsheet, BigQuery, Python, Looker Studio.</p>
@@ -117,8 +130,10 @@
                         </article>
                         
                         <article class="project-item project-item-detailed-view" id="detail-project4">
-                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
-                            <img src="images/project4.jpg" alt="Gambar Project 4 GCP Hardening" class="project-image">
+                            <button class="back-to-grid-btn">&larr; Back to Project List</button>
+                            <div class="project-media-column">
+                                <img src="images/projects/project4.jpg" alt="Gambar Project 4 GCP Hardening" class="project-main-image">
+                            </div>
                             <div class="project-content">
                                 <h2>Automation of GCP Hardening Checking System at Bukalapak</h2>
                                 <p class="project-meta"><strong>Tools:</strong> Automation, Spreadsheet, BigQuery, Python, GitLab, Looker Studio.</p>
@@ -138,8 +153,10 @@
                         </article>
 
                         <article class="project-item project-item-detailed-view" id="detail-project5">
-                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
-                            <img src="images/project5.jpg" alt="Gambar Project 5 Flagging System LinkAja" class="project-image">
+                            <button class="back-to-grid-btn">&larr; Back to Project List</button>
+                            <div class="project-media-column">
+                                <img src="images/projects/project5.jpg" alt="Gambar Project 5 Flagging System LinkAja" class="project-main-image">
+                            </div>
                             <div class="project-content">
                                 <h2>Automation of Flagging System at LinkAja</h2>
                                 <p class="project-meta"><strong>Tools:</strong> Automation, Excel, BigQuery, GitLab, Looker.</p>
@@ -159,8 +176,10 @@
                         </article>
 
                         <article class="project-item project-item-detailed-view" id="detail-project6">
-                            <button class="back-to-grid-btn">&larr; Kembali ke Daftar Proyek</button>
-                            <img src="images/project6.jpg" alt="Gambar Project 6 Risk Assessment Bukalapak" class="project-image">
+                            <button class="back-to-grid-btn">&larr; Back to Project List</button>
+                            <div class="project-media-column">
+                                <img src="images/projects/project6.jpg" alt="Gambar Project 6 Risk Assessment Bukalapak" class="project-main-image">
+                            </div>
                             <div class="project-content">
                                 <h2>Tech Annual Risk Assessment Project at Bukalapak</h2>
                                 <p class="project-meta"><strong>Tools:</strong> Data Security, Risk Assessment, Archer, Spreadsheet.</p>
@@ -174,25 +193,75 @@
                                     <li>Continuous follow-up to monitor risk mitigation progress.</li>
                                 </ul>
                                 <p><strong>Results:</strong> The project provided clear insights into technological risks across Bukalapak's business units and led to effective mitigation strategies, resulting in stronger system resilience, better regulatory compliance, and improved risk management.</p>
-                                </div>
+                            </div>
                         </article>
-                        </div>
+                    </div>
                 </article>
             </div>
 
             <div id="dashboard-projects" class="tab-content">
                 <article class="activity-category">
                     <h2>Dashboard Portfolio</h2>
+
+                    <div class="filter-container" id="dashboard-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="tableau">Tableau</button>
+                        <button class="filter-btn" data-filter="looker">Looker</button>
+                        <button class="filter-btn" data-filter="snowsight">Snowsight</button>
+                        <button class="filter-btn" data-filter="others-dashboard">Others</button>
+                    </div>
+
                     <div class="dashboard-grid">
-                        <a href="https://public.tableau.com/app/profile/javasalfredabyp/viz/DashboardChurnXYZ" target="_blank" class="dashboard-card">
+                        <a href="https://public.tableau.com/app/profile/javasalfredabyp/viz/DashboardChurnXYZ" target="_blank" class="dashboard-card" data-tools="tableau python sql">
                             <div class="dashboard-image-container">
-                                <img src="images/dashboard_churn_pelanggan.jpg" alt="Dashboard Prediksi Churn Pelanggan">
+                                <img src="images/projects/dashboard.jpg" alt="Dashboard Prediksi Churn Pelanggan">
                             </div>
                             <h3>Prediksi Churn Pelanggan (Interaktif)</h3>
-                            <p class="dashboard-tools">Tools: Tableau, SQL, Python</p>
+                            <p class="dashboard-tools">Tableau</p>
                         </a>
-                        </div>
-                     <p class="placeholder-text" style="text-align:center; margin-top: 40px; font-style:italic; color: #777;">
+                        <a href="#" target="_blank" class="dashboard-card" data-tools="snowsight">
+                            <div class="dashboard-image-container">
+                                <img src="images/projects/dashboard6.png" alt="Dashboard Pertamina Onboarding Performance">
+                            </div>
+                            <h3>Pertamina Onboarding Performance</h3>
+                            <p class="dashboard-tools">Snowsight</p>
+                        </a>  
+                        <a href="#" target="_blank" class="dashboard-card" data-tools="snowsight">
+                            <div class="dashboard-image-container">
+                                <img src="images/projects/dashboard5.png" alt="Dashboard Pertamina E-Voucher Performance">
+                            </div>
+                            <h3>Pertamina E-Voucher Performance</h3>
+                            <p class="dashboard-tools">Snowsight</p>
+                        </a>  
+                        <a href="#" target="_blank" class="dashboard-card" data-tools="looker">
+                            <div class="dashboard-image-container">
+                                <img src="images/projects/dashboard4.png" alt="Dashboard eKYC Submission Journey">
+                            </div>
+                            <h3>eKYC Submission Journey</h3>
+                            <p class="dashboard-tools">Looker</p>
+                        </a>  
+                        <a href="#" target="_blank" class="dashboard-card" data-tools="looker">
+                            <div class="dashboard-image-container">
+                                <img src="images/projects/dashboard3.png" alt="Dashboard Monitoring User Deduction">
+                            </div>
+                            <h3>Monitoring User Deduction</h3>
+                            <p class="dashboard-tools">Looker</p>
+                        </a>     
+                        <a href="#" target="_blank" class="dashboard-card" data-tools="looker">
+                            <div class="dashboard-image-container">
+                                <img src="images/projects/dashboard2.png" alt="Dashboard Disbursement Performance">
+                            </div>
+                            <h3>Disbursement Performance</h3>
+                            <p class="dashboard-tools">Looker</p>
+                        </a>
+                        <a href="#" target="_blank" class="dashboard-card" data-tools="tableau others-dashboard"> <div class="dashboard-image-container">
+                                <img src="images/projects/dashboard1.png" alt="Dashboard Indonesia COVID-19 Monitoring">
+                            </div>
+                            <h3>Indonesia COVID-19 Monitoring</h3>
+                            <p class="dashboard-tools">Tableau</p>
+                        </a>                         
+                    </div>
+                    <p class="placeholder-text" style="text-align:center; margin-top: 40px; font-style:italic; color: #777;">
                         More dashboard showcases will be added soon.
                     </p>
                 </article>
@@ -214,55 +283,189 @@
         document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
     <script>
-        // JavaScript untuk Tab Functionality
         document.addEventListener('DOMContentLoaded', function () {
+            // --- Tab Functionality ---
             const tabs = document.querySelectorAll('.tab-link');
-            const tabContents = document.querySelectorAll('.tab-content'); // Ubah nama variabel agar tidak konflik
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Fungsi untuk mengaktifkan tab tertentu dan menjalankan filter default "All"
+            function activateTab(tabId) {
+                let targetTabButton = null;
+                let targetTabContent = null;
+
+                tabs.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('data-tab') === tabId) {
+                        targetTabButton = item;
+                    }
+                });
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tabId) {
+                        targetTabContent = content;
+                    }
+                });
+
+                if (targetTabButton && targetTabContent) {
+                    targetTabButton.classList.add('active');
+                    targetTabContent.classList.add('active');
+
+                    // Reset Work Projects view to summary grid if this tab is activated
+                    if (tabId === 'work-projects') {
+                        const workProjectSummaryGrid = document.querySelector('#work-projects .work-project-summary-grid');
+                        const detailedProjectsContainer = document.querySelector('#work-projects .detailed-projects-container');
+                        const detailedProjectViews = document.querySelectorAll('#work-projects .project-item-detailed-view');
+                        if (workProjectSummaryGrid && detailedProjectsContainer) {
+                            detailedProjectsContainer.style.display = 'none';
+                            detailedProjectViews.forEach(view => view.style.display = 'none');
+                            workProjectSummaryGrid.style.display = 'grid';
+                        }
+                    }
+                    
+                    // Apply "All" filter for the newly activated tab
+                    const activeFilterContainer = targetTabContent.querySelector('.filter-container');
+                    if (activeFilterContainer) {
+                        const allFilterButton = activeFilterContainer.querySelector('.filter-btn[data-filter="all"]');
+                        if (allFilterButton) {
+                            allFilterButton.click(); // Simulate click on "All"
+                        } else {
+                            // If no "All" button, manually show all items in this tab
+                            const itemsToFilter = targetTabContent.querySelectorAll('.summary-card, .dashboard-card');
+                            itemsToFilter.forEach(item => item.style.display = ''); // Or 'flex'/'grid' as appropriate
+                        }
+                    }
+
+
+                } else if (tabs.length > 0 && tabContents.length > 0) {
+                    if (!document.querySelector('.tab-link.active')) {
+                        tabs[0].classList.add('active');
+                        const firstTabId = tabs[0].getAttribute('data-tab');
+                        document.getElementById(firstTabId).classList.add('active');
+                        // Apply "All" filter for the first tab as well
+                        const firstTabContent = document.getElementById(firstTabId);
+                        const firstTabFilterContainer = firstTabContent.querySelector('.filter-container');
+                        if (firstTabFilterContainer) {
+                             const allFilterButton = firstTabFilterContainer.querySelector('.filter-btn[data-filter="all"]');
+                             if (allFilterButton) allFilterButton.click();
+                        }
+                    }
+                }
+            }
 
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    tabs.forEach(item => item.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-
-                    tab.classList.add('active');
                     const targetContentId = tab.getAttribute('data-tab');
-                    document.getElementById(targetContentId).classList.add('active');
+                    activateTab(targetContentId);
+                    if (history.pushState) {
+                        history.pushState(null, null, '#' + targetContentId);
+                    } else {
+                        window.location.hash = '#' + targetContentId;
+                    }
                 });
             });
 
-            // JavaScript untuk Work Project Summary Card Click & Back Button
+            function handleHashChange() {
+                if (window.location.hash) {
+                    const hash = window.location.hash.substring(1);
+                    const elementToActivate = document.getElementById(hash);
+                    if (elementToActivate && elementToActivate.classList.contains('tab-content')) {
+                        activateTab(hash);
+                    }
+                } else {
+                    if (tabs.length > 0 && !document.querySelector('.tab-link.active')) {
+                         activateTab(tabs[0].getAttribute('data-tab'));
+                    }
+                }
+            }
+            handleHashChange();
+            window.addEventListener('hashchange', handleHashChange, false);
+
+            // --- Work Project Summary Card Click & Back Button ---
             const summaryCards = document.querySelectorAll('#work-projects .summary-card');
             const workProjectSummaryGrid = document.querySelector('#work-projects .work-project-summary-grid');
             const detailedProjectsContainer = document.querySelector('#work-projects .detailed-projects-container');
             const detailedProjectViews = document.querySelectorAll('#work-projects .project-item-detailed-view');
             const backToGridButtons = document.querySelectorAll('#work-projects .back-to-grid-btn');
 
-            summaryCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
-                    
-                    if (workProjectSummaryGrid && detailedProjectsContainer) {
-                        workProjectSummaryGrid.style.display = 'none'; // Sembunyikan grid summary
-                        detailedProjectsContainer.style.display = 'block'; // Tampilkan kontainer detail
-                    }
-
-                    detailedProjectViews.forEach(view => {
-                        if (view.id === targetId) {
-                            view.style.display = 'flex'; // Atau 'block' sesuai styling .project-item awal
-                        } else {
-                            view.style.display = 'none';
-                        }
+            if (workProjectSummaryGrid && detailedProjectsContainer) {
+                summaryCards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        const targetId = this.getAttribute('data-target');
+                        workProjectSummaryGrid.style.display = 'none';
+                        detailedProjectsContainer.style.display = 'block';
+                        detailedProjectViews.forEach(view => {
+                            view.style.display = (view.id === targetId) ? 'flex' : 'none';
+                        });
                     });
                 });
-            });
 
-            backToGridButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    if (workProjectSummaryGrid && detailedProjectsContainer) {
-                        detailedProjectsContainer.style.display = 'none'; // Sembunyikan kontainer detail
-                        detailedProjectViews.forEach(view => view.style.display = 'none'); // Sembunyikan semua detail
-                        workProjectSummaryGrid.style.display = 'grid'; // Tampilkan kembali grid summary
-                    }
+                backToGridButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        detailedProjectsContainer.style.display = 'none';
+                        detailedProjectViews.forEach(view => view.style.display = 'none');
+                        workProjectSummaryGrid.style.display = 'grid';
+                        // Saat kembali ke grid, pastikan filter "All" aktif atau filter terakhir yang dipilih diterapkan kembali
+                        // Untuk simple, kita bisa panggil filter 'All'
+                        const activeWorkFilterButton = document.querySelector('#work-project-filters .filter-btn.active');
+                        if(activeWorkFilterButton) activeWorkFilterButton.click(); else document.querySelector('#work-project-filters .filter-btn[data-filter="all"]').click();
+
+                    });
+                });
+            }
+
+            // --- Filter Functionality ---
+            const filterContainers = document.querySelectorAll('.filter-container');
+
+            filterContainers.forEach(container => {
+                const filterButtons = container.querySelectorAll('.filter-btn');
+                const gridId = (container.id === 'work-project-filters') ? 
+                               '#work-projects .work-project-summary-grid' : 
+                               '#dashboard-projects .dashboard-grid';
+                const itemsToFilter = document.querySelector(gridId).children;
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Update active button state
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const filterValue = this.getAttribute('data-filter');
+
+                        for (let item of itemsToFilter) {
+                            const itemTools = (item.getAttribute('data-tools') || '').toLowerCase().split(' ');
+                            
+                            // Default display style for items based on their grid container
+                            const defaultDisplay = (gridId.includes('work-project-summary-grid') || gridId.includes('dashboard-grid')) ? '' : 'flex'; // summary-card dan dashboard-card akan diatur oleh grid parent
+
+                            if (filterValue === 'all') {
+                                item.style.display = defaultDisplay; 
+                            } else if (filterValue.startsWith('others-')) {
+                                // Advanced "Others": items not matching any *other specific* active filters in this group
+                                let isOther = true;
+                                const specificFilters = [];
+                                container.querySelectorAll('.filter-btn').forEach(btn => {
+                                    const btnFilter = btn.getAttribute('data-filter');
+                                    if(btnFilter !== 'all' && !btnFilter.startsWith('others-')) {
+                                        specificFilters.push(btnFilter);
+                                    }
+                                });
+                                for(const tool of itemTools){
+                                    if(specificFilters.includes(tool)){
+                                        isOther = false;
+                                        break;
+                                    }
+                                }
+                                item.style.display = isOther ? defaultDisplay : 'none';
+
+                            } else {
+                                if (itemTools.includes(filterValue.toLowerCase())) {
+                                    item.style.display = defaultDisplay;
+                                } else {
+                                    item.style.display = 'none';
+                                }
+                            }
+                        }
+                    });
                 });
             });
         });
