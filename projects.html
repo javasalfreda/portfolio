@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Portfolio Javas Alfreda</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS untuk menyesuaikan ukuran gambar dan layout pada detail proyek */
+        .project-item-detailed-view {
+            display: flex; /* Menggunakan flexbox untuk layout utama */
+            flex-wrap: wrap; /* Memungkinkan item untuk wrap ke baris berikutnya jika tidak cukup ruang */
+            gap: 25px;       /* Jarak antara kolom gambar dan kolom teks, serta tombol kembali */
+            align-items: flex-start; /* Menjaga bagian atas item sejajar */
+        }
+
+        .project-item-detailed-view .back-to-grid-btn {
+            width: 100%; /* Tombol kembali mengambil lebar penuh */
+            order: -1; /* Memastikan tombol kembali selalu berada di paling atas */
+            margin-bottom: 10px; /* Sedikit jarak ke konten di bawahnya */
+        }
+
+        .project-item-detailed-view .project-media-column {
+            flex: 1 1 350px; /* Kolom gambar bisa mengecil hingga 350px dan membesar jika ada ruang */
+            /* Anda bisa menambahkan max-width jika ingin membatasi lebar maksimum kolom gambar, contoh: max-width: 500px; */
+        }
+
+        .project-item-detailed-view .project-main-image {
+            max-width: 100%; /* KUNCI: Membuat gambar responsif dan tidak melebihi lebar kontainernya */
+            height: auto;    /* KUNCI: Menjaga rasio aspek gambar */
+            display: block;  /* Menghilangkan spasi ekstra di bawah gambar (jika ada) dan membuatnya sebagai block-level element */
+            border-radius: 8px; /* Opsional: Memberikan sedikit lengkungan pada sudut gambar */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Opsional: Menambahkan sedikit bayangan untuk efek kedalaman */
+        }
+
+        .project-item-detailed-view .project-content {
+            flex: 2 1 500px; /* Kolom konten mengambil lebih banyak ruang (dua kali lipat dari kolom media) dan bisa mengecil hingga 500px */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,8 +59,8 @@
             <h1>My Projects</h1>
 
             <div class="tabs-nav">
-                <button class="tab-link active" data-tab="work-projects">Work Project</button>
-                <button class="tab-link" data-tab="dashboard-projects">Dashboard</button>
+                <button class="tab-link active" data-tab="work-projects">Work Projects</button>
+                <button class="tab-link" data-tab="dashboard-projects">Dashboards</button>
             </div>
 
             <div id="work-projects" class="tab-content active">
@@ -92,6 +124,10 @@
                             <button class="back-to-grid-btn">&larr; Back to Project List</button>
                             <div class="project-media-column">
                                 <img src="images/projects/project1.jpg" alt="Analisis Sentimen - Tampilan Utama" class="project-main-image">
+                                <div class="project-additional-images">
+                                    <img src="images/projects/project1_detail1.jpg" alt="Detail Analisis Sentimen 1" class="additional-image-item">
+                                    <img src="images/projects/project1_detail2.jpg" alt="Detail Analisis Sentimen 2" class="additional-image-item">
+                                    </div>
                                 </div>
                             <div class="project-content">
                                 <h2>Analisis Sentimen Ulasan Produk E-commerce</h2>
@@ -270,7 +306,7 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> Javas Alfreda Belva Yoga Pratama. Semua Hak Dilindungi.</p>
+        <p>&copy; <span id="currentYear"></span> Javas Alfreda Belva Yoga Pratama. All Rights Reserved.</p>
         <p>
             <a href="https://wa.me/6285878513900" target="_blank">WhatsApp</a> |
             <a href="mailto:javasalfreda@gmail.com" target="_blank">Email</a> |
@@ -318,7 +354,7 @@
                         if (workProjectSummaryGrid && detailedProjectsContainer) {
                             detailedProjectsContainer.style.display = 'none';
                             detailedProjectViews.forEach(view => view.style.display = 'none');
-                            workProjectSummaryGrid.style.display = 'grid';
+                            workProjectSummaryGrid.style.display = 'grid'; // Pastikan summary grid ditampilkan
                         }
                     }
                     
@@ -327,16 +363,31 @@
                     if (activeFilterContainer) {
                         const allFilterButton = activeFilterContainer.querySelector('.filter-btn[data-filter="all"]');
                         if (allFilterButton) {
-                            allFilterButton.click(); // Simulate click on "All"
+                            // Periksa apakah tombol "All" sudah aktif, jika tidak, klik
+                            if (!allFilterButton.classList.contains('active')) {
+                                allFilterButton.click(); 
+                            } else {
+                                // Jika sudah aktif, panggil fungsi filter secara manual dengan 'all'
+                                // Ini untuk menangani kasus di mana tab diubah melalui hash URL
+                                // dan filter 'all' perlu diterapkan kembali secara visual
+                                const gridId = (activeFilterContainer.id === 'work-project-filters') ? 
+                                            '#work-projects .work-project-summary-grid' : 
+                                            '#dashboard-projects .dashboard-grid';
+                                const itemsToFilter = document.querySelector(gridId).children;
+                                for (let item of itemsToFilter) {
+                                    item.style.display = ''; // Atau 'flex', 'grid' sesuai default
+                                }
+                            }
                         } else {
                             // If no "All" button, manually show all items in this tab
                             const itemsToFilter = targetTabContent.querySelectorAll('.summary-card, .dashboard-card');
-                            itemsToFilter.forEach(item => item.style.display = ''); // Or 'flex'/'grid' as appropriate
+                            itemsToFilter.forEach(item => item.style.display = ''); 
                         }
                     }
 
 
                 } else if (tabs.length > 0 && tabContents.length > 0) {
+                    // Default: activate first tab if no tab is active
                     if (!document.querySelector('.tab-link.active')) {
                         tabs[0].classList.add('active');
                         const firstTabId = tabs[0].getAttribute('data-tab');
@@ -346,7 +397,7 @@
                         const firstTabFilterContainer = firstTabContent.querySelector('.filter-container');
                         if (firstTabFilterContainer) {
                              const allFilterButton = firstTabFilterContainer.querySelector('.filter-btn[data-filter="all"]');
-                             if (allFilterButton) allFilterButton.click();
+                             if (allFilterButton && !allFilterButton.classList.contains('active')) allFilterButton.click();
                         }
                     }
                 }
@@ -368,17 +419,39 @@
                 if (window.location.hash) {
                     const hash = window.location.hash.substring(1);
                     const elementToActivate = document.getElementById(hash);
+                    // Cek apakah hash adalah ID dari tab content atau ID dari project detail
                     if (elementToActivate && elementToActivate.classList.contains('tab-content')) {
                         activateTab(hash);
+                    } else if (elementToActivate && elementToActivate.classList.contains('project-item-detailed-view')) {
+                        // Jika hash adalah untuk detail proyek, pastikan tab 'work-projects' aktif
+                        // dan tampilkan detail proyek yang sesuai
+                        activateTab('work-projects'); // Aktifkan tab work-projects dulu
+
+                        // Tunggu sebentar agar tab aktif dan elemen ada di DOM dengan benar
+                        setTimeout(() => {
+                            const workProjectSummaryGrid = document.querySelector('#work-projects .work-project-summary-grid');
+                            const detailedProjectsContainer = document.querySelector('#work-projects .detailed-projects-container');
+                            const detailedProjectViews = document.querySelectorAll('#work-projects .project-item-detailed-view');
+
+                            if (workProjectSummaryGrid && detailedProjectsContainer && elementToActivate) {
+                                workProjectSummaryGrid.style.display = 'none';
+                                detailedProjectsContainer.style.display = 'block';
+                                detailedProjectViews.forEach(view => {
+                                    view.style.display = (view.id === hash) ? 'flex' : 'none';
+                                });
+                            }
+                        }, 0); // Timeout 0 untuk memastikan eksekusi setelah browser selesai render perubahan tab
                     }
                 } else {
+                    // Jika tidak ada hash, aktifkan tab pertama
                     if (tabs.length > 0 && !document.querySelector('.tab-link.active')) {
                          activateTab(tabs[0].getAttribute('data-tab'));
                     }
                 }
             }
-            handleHashChange();
+            handleHashChange(); // Panggil saat load awal
             window.addEventListener('hashchange', handleHashChange, false);
+
 
             // --- Work Project Summary Card Click & Back Button ---
             const summaryCards = document.querySelectorAll('#work-projects .summary-card');
@@ -394,8 +467,15 @@
                         workProjectSummaryGrid.style.display = 'none';
                         detailedProjectsContainer.style.display = 'block';
                         detailedProjectViews.forEach(view => {
+                            // Pastikan menggunakan 'flex' sesuai dengan style CSS yang baru ditambahkan
                             view.style.display = (view.id === targetId) ? 'flex' : 'none';
                         });
+                        // Update hash URL untuk deep linking ke detail project
+                        if (history.pushState) {
+                            history.pushState(null, null, '#' + targetId);
+                        } else {
+                            window.location.hash = '#' + targetId;
+                        }
                     });
                 });
 
@@ -404,8 +484,16 @@
                         detailedProjectsContainer.style.display = 'none';
                         detailedProjectViews.forEach(view => view.style.display = 'none');
                         workProjectSummaryGrid.style.display = 'grid';
-                        // Saat kembali ke grid, pastikan filter "All" aktif atau filter terakhir yang dipilih diterapkan kembali
-                        // Untuk simple, kita bisa panggil filter 'All'
+                        
+                        // Saat kembali ke grid, ubah hash URL ke tab work-projects atau hapus hash spesifik project
+                        const workProjectsTabId = 'work-projects';
+                        if (history.pushState) {
+                            history.pushState(null, null, '#' + workProjectsTabId);
+                        } else {
+                            window.location.hash = '#' + workProjectsTabId;
+                        }
+
+                        // Pastikan filter yang sesuai (misalnya "All") aktif
                         const activeWorkFilterButton = document.querySelector('#work-project-filters .filter-btn.active');
                         if(activeWorkFilterButton) activeWorkFilterButton.click(); else document.querySelector('#work-project-filters .filter-btn[data-filter="all"]').click();
 
@@ -421,7 +509,10 @@
                 const gridId = (container.id === 'work-project-filters') ? 
                                '#work-projects .work-project-summary-grid' : 
                                '#dashboard-projects .dashboard-grid';
-                const itemsToFilter = document.querySelector(gridId).children;
+                const itemsParent = document.querySelector(gridId);
+                if (!itemsParent) return; // Guard clause jika parent tidak ditemukan
+                const itemsToFilter = itemsParent.children;
+
 
                 filterButtons.forEach(button => {
                     button.addEventListener('click', function() {
@@ -434,13 +525,11 @@
                         for (let item of itemsToFilter) {
                             const itemTools = (item.getAttribute('data-tools') || '').toLowerCase().split(' ');
                             
-                            // Default display style for items based on their grid container
-                            const defaultDisplay = (gridId.includes('work-project-summary-grid') || gridId.includes('dashboard-grid')) ? '' : 'flex'; // summary-card dan dashboard-card akan diatur oleh grid parent
+                            const defaultDisplay = ''; // Untuk item dalam grid, display dikontrol oleh parent grid
 
                             if (filterValue === 'all') {
                                 item.style.display = defaultDisplay; 
                             } else if (filterValue.startsWith('others-')) {
-                                // Advanced "Others": items not matching any *other specific* active filters in this group
                                 let isOther = true;
                                 const specificFilters = [];
                                 container.querySelectorAll('.filter-btn').forEach(btn => {
@@ -468,6 +557,10 @@
                     });
                 });
             });
+            
+            // Panggil handleHashChange di akhir untuk memastikan state awal benar
+            // terutama jika halaman dimuat dengan hash
+             handleHashChange();
         });
     </script>
 </body>

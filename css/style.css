@@ -18,11 +18,11 @@ body, html {
     border-radius: 8px;
 }
 
-/* Header dan Navigasi */
+/* Header dan Navigasi - Style Dasar (Desktop) */
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 1rem 0; /* Padding vertikal header */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -41,7 +41,7 @@ nav {
 nav .logo a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.8em;
+    font-size: 1.8em; /* Ukuran font logo */
     font-weight: bold;
 }
 
@@ -59,8 +59,8 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.1em;
-    padding: 5px 10px;
+    font-size: 1.1em; /* Ukuran font link menu */
+    padding: 5px 10px; /* Padding link menu */
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
@@ -70,9 +70,54 @@ nav ul li a.active {
     background-color: #575757;
 }
 
-/* Main Content */
+/* Main Content - Style Dasar (Desktop) */
 main {
-    padding-top: 20px; /* Padding untuk konten di bawah header sticky */
+    /* Sesuaikan padding-top ini dengan tinggi header desktop Anda */
+    /* Misalnya, jika header desktop tingginya 80px, maka: */
+    padding-top: 20px; /* CONTOH! Ukur tinggi header desktop Anda */
+}
+
+
+/* Aturan Responsif Umum (Termasuk Header & Navigasi untuk Mobile) */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 0; /* 1. Kurangi padding vertikal header */
+        /* position: sticky; top: 0; z-index: 1000; tetap berlaku */
+    }
+
+    nav {
+        flex-direction: column; /* Logo dan menu jadi bertumpuk */
+        align-items: flex-start;
+        /* width & margin tetap */
+    }
+
+    nav .logo a {
+        font-size: 1.5em;   /* 2. Kurangi ukuran font logo */
+        margin-bottom: 8px; /* 3. Beri sedikit jarak jika menu terlalu mepet setelah logo */
+    }
+
+    nav ul {
+        margin-top: 0;    /* 4. Hilangkan atau kurangi margin atas dari list menu */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 4px; /* 5. Kurangi jarak antar item menu */
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+        font-size: 1em;     /* 6. Kurangi ukuran font link menu */
+        padding: 6px 10px;  /* 7. Kurangi sedikit padding vertikal link menu */
+    }
+
+    main {
+        padding-top: 60px; 
+    }
 }
 
 /* Hero Section (Beranda - Jika ada, contoh) */
@@ -255,15 +300,16 @@ footer .cta-button.secondary:hover {
     color: #2c3e50; /* Biru tua */
 }
 
-.profile-pic-medium { /* Untuk Halaman Tentang Saya */
-    width: 1050px; 
-    height: 200px;
-    border-radius: 8px; 
-    object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi, mungkin ada cropping */
-    margin: 15px auto 25px auto; /* Margin untuk centering */
-    display: block; /* Untuk centering dengan margin auto */
-    border: 3px solid #ddd; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opsional: tambahkan sedikit bayangan */
+.profile-pic-medium {
+    width: 100%; /* Mengisi lebar kontainer induk */
+    max-width: 1050px; /* Batas lebar maksimum seperti sebelumnya */
+    height: auto; /* Tinggi akan menyesuaikan secara otomatis */
+    border-radius: 8px;
+    object-fit: cover;
+    margin: 15px auto 25px auto;
+    display: block;
+    border: 3px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #about-me p { /* Paragraf utama di Tentang Saya */
@@ -1353,4 +1399,77 @@ footer a:hover {
     color: white;
     border-color: #2193b0;
     font-weight: 600;
+}
+.project-item-detailed-view {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 25px;       
+    align-items: flex-start; 
+}
+
+.project-item-detailed-view .back-to-grid-btn {
+    width: 100%; 
+    order: -1; 
+    margin-bottom: 10px; 
+}
+
+/* Kolom Media: Menggunakan flex column untuk menata gambar utama dan blok gambar tambahan secara vertikal */
+.project-item-detailed-view .project-media-column {
+    flex: 1 1 350px; /* Atau sesuaikan basis flex sesuai kebutuhan */
+    /* max-width: 700px; */ /* Anda bisa membatasi lebar maksimum kolom media jika diperlukan */
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; /* Jarak antara gambar utama dan blok gambar tambahan, serta antar gambar tambahan di dalamnya jika .project-additional-images juga flex column */
+}
+
+/* Gambar Utama Proyek */
+.project-item-detailed-view .project-main-image {
+    max-width: 100%; 
+    height: auto;    
+    display: block;  
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-item-detailed-view .project-content {
+    flex: 2 1 500px; /* Kolom konten, sesuaikan basis flex */
+}
+
+/* Kontainer untuk Judul dan Gambar Tambahan */
+.project-additional-images {
+    display: flex; /* Menggunakan flex untuk mengatur judul dan gambar-gambar tambahan di dalamnya */
+    flex-direction: column; /* Menyusun judul dan setiap gambar tambahan secara vertikal */
+    gap: 15px;       /* Jarak antara judul dan gambar pertama, serta antar gambar tambahan */
+    width: 100%;     
+    box-sizing: border-box; 
+}
+
+.additional-images-title {
+    width: 100%; 
+    font-size: 1em; /* Sedikit perbesar judulnya */
+    color: #333;   /* Warna lebih gelap untuk kontras */
+    margin-bottom: 0; /* Dihapus karena gap pada parent (.project-additional-images) akan memberi jarak */
+    font-weight: bold;
+    padding-bottom: 5px; /* Sedikit padding bawah jika ingin garis bawah atau pemisah visual */
+    border-bottom: 1px solid #eee; /* Garis pemisah tipis opsional */
+}
+
+/* Setiap Item Gambar Tambahan */
+.additional-image-item {
+    /* Menghapus style thumbnail lama:
+    width: 100px;  
+    height: 75px; 
+    object-fit: cover; 
+    border: 1px solid #ddd;
+    cursor: pointer; 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    */
+
+    /* BARU: Membuat ukuran dan tampilan mirip dengan .project-main-image */
+    max-width: 100%; /* Mengambil lebar penuh dari kontainer .project-media-column */
+    height: auto;    /* Menjaga rasio aspek gambar */
+    display: block;  /* Perilaku block untuk layout yang benar */
+    border-radius: 8px; /* Samakan dengan gaya gambar utama */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Samakan dengan gaya gambar utama */
+    /* object-fit: cover; */ /* Biasanya tidak diperlukan jika height: auto dan rasio aspek ingin dijaga. Gunakan jika ingin crop. */
 }
