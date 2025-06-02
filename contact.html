@@ -10,9 +10,14 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Javas Alfreda Belva Yoga Pratama</a>
+                <a href="index.html">Javas Alfreda</a>
             </div>
-            <ul>
+            <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="mainNav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -69,6 +74,18 @@
     </footer>
     <script>
         document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+    <script>
+        // JavaScript untuk Burger Menu (sama seperti di index.html)
+        const burgerMenu = document.getElementById('burgerMenu');
+        const mainNav = document.getElementById('mainNav');
+
+        burgerMenu.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            burgerMenu.classList.toggle('active');
+            const isExpanded = mainNav.classList.contains('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
+        });
     </script>
 </body>
 </html>

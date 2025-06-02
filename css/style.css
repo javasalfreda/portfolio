@@ -18,58 +18,6 @@ body, html {
     border-radius: 8px;
 }
 
-/* Header dan Navigasi - Style Dasar (Desktop) */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0; /* Padding vertikal header */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-nav .logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.8em; /* Ukuran font logo */
-    font-weight: bold;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em; /* Ukuran font link menu */
-    padding: 5px 10px; /* Padding link menu */
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: #575757;
-}
-
 /* Main Content - Style Dasar (Desktop) */
 main {
     /* Sesuaikan padding-top ini dengan tinggi header desktop Anda */
@@ -77,48 +25,41 @@ main {
     padding-top: 20px; /* CONTOH! Ukur tinggi header desktop Anda */
 }
 
-
-/* Aturan Responsif Umum (Termasuk Header & Navigasi untuk Mobile) */
+/* Aturan Responsif Umum yang mungkin masih relevan di luar header/nav awal */
 @media (max-width: 768px) {
-    header {
-        padding: 0.5rem 0; /* 1. Kurangi padding vertikal header */
-        /* position: sticky; top: 0; z-index: 1000; tetap berlaku */
+    /* Aturan nav dan header awal untuk mobile telah dihapus karena digantikan oleh implementasi burger menu di bawah */
+
+    main { /* Pastikan padding-top main content di mobile sesuai jika header mobile berbeda tinggi */
+        padding-top: 20px; 
     }
 
-    nav {
-        flex-direction: column; /* Logo dan menu jadi bertumpuk */
-        align-items: flex-start;
-        /* width & margin tetap */
+    #hero h1 { /* Jika Hero Section digunakan */
+        font-size: 2.5em;
     }
 
-    nav .logo a {
-        font-size: 1.5em;   /* 2. Kurangi ukuran font logo */
-        margin-bottom: 8px; /* 3. Beri sedikit jarak jika menu terlalu mepet setelah logo */
+    #hero .tagline { /* Jika Hero Section digunakan */
+        font-size: 1.3em;
     }
 
-    nav ul {
-        margin-top: 0;    /* 4. Hilangkan atau kurangi margin atas dari list menu */
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .project-item { /* Untuk halaman projects.html */
         flex-direction: column;
-        width: 100%;
     }
 
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 4px; /* 5. Kurangi jarak antar item menu */
-        width: 100%;
+    .project-image { /* Untuk halaman projects.html */
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 
-    nav ul li a {
-        display: block;
-        text-align: center;
-        font-size: 1em;     /* 6. Kurangi ukuran font link menu */
-        padding: 6px 10px;  /* 7. Kurangi sedikit padding vertikal link menu */
-    }
-
-    main {
-        padding-top: 60px; 
+    .skills-grid {
+        grid-template-columns: 1fr; /* Skill jadi satu kolom */
     }
 }
+
 
 /* Hero Section (Beranda - Jika ada, contoh) */
 #hero {
@@ -292,13 +233,15 @@ footer .cta-button.secondary:hover {
 }
 
 #about-me h1, 
-#projects-list h1, /* Untuk halaman Proyek */
+#projects-page h1, /* Untuk halaman Proyek dari template projects.html, bukan #projects-list */
 #contact-form-section h1, /* Untuk halaman Kontak */
 #social-links h1 { /* Untuk halaman Kontak */
     font-size: 2.8em;
     margin-bottom: 20px;
     color: #2c3e50; /* Biru tua */
 }
+/* Ganti #projects-list h1 menjadi #projects-page h1 jika ID section utama adalah projects-page */
+
 
 .profile-pic-medium {
     width: 100%; /* Mengisi lebar kontainer induk */
@@ -487,7 +430,7 @@ footer .cta-button.secondary:hover {
 }
 
 .work-description p:last-child,
-.org-description p:last-child
+.org-description p:last-child, /* Ada koma yang hilang di sini sebelumnya */
 .edu-description p:last-child {
     margin-bottom: 0;
 }
@@ -508,7 +451,8 @@ footer .cta-button.secondary:hover {
 }
 
 /* Halaman Proyek (Projects Page) */
-.project-item { /* Ini untuk daftar proyek di halaman projects.html */
+/* Gaya .project-item ini untuk tampilan daftar di projects.html, berbeda dengan .project-item-detailed-view */
+.project-item { 
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -522,7 +466,7 @@ footer .cta-button.secondary:hover {
     margin-bottom: 20px;
 }
 
-.project-image {
+.project-image { /* Ini untuk gambar di .project-item standar, bukan di .project-item-detailed-view .project-media-column */
     width: 100%;
     max-width: 350px;
     height: auto;
@@ -532,7 +476,7 @@ footer .cta-button.secondary:hover {
     align-self: flex-start;
 }
 
-.project-content {
+.project-content { /* Ini untuk konten di .project-item standar */
     flex: 1;
     min-width: 300px;
 }
@@ -613,9 +557,12 @@ footer .cta-button.secondary:hover {
     border-top: 1px solid #eee;
 }
 
-#social-links h2 {
-    margin-bottom: 20px;
+#social-links h2 { /* Judul untuk Connect With Me */
+    font-size: 2em; /* Ukuran disamakan dengan subjudul lain jika perlu */
+    color: #34495e;
+    margin-bottom: 25px;
 }
+
 
 .social-icons a {
     margin: 0 15px;
@@ -653,57 +600,6 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-/* Aturan Responsif Umum */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        margin-top: 15px;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    nav ul li a {
-        display: block;
-        text-align: center;
-    }
-
-    #hero h1 { /* Jika Hero Section digunakan */
-        font-size: 2.5em;
-    }
-
-    #hero .tagline { /* Jika Hero Section digunakan */
-        font-size: 1.3em;
-    }
-
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .project-item { /* Untuk halaman projects.html */
-        flex-direction: column;
-    }
-
-    .project-image { /* Untuk halaman projects.html */
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr; /* Skill jadi satu kolom */
-    }
 }
 
 /* Aturan Responsif Spesifik untuk Work & Org Items */
@@ -1431,9 +1327,10 @@ footer a:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.project-item-detailed-view .project-content {
+.project-item-detailed-view .project-content { /* Gaya ini sudah ada, pastikan konsisten atau gabungkan */
     flex: 2 1 500px; /* Kolom konten, sesuaikan basis flex */
 }
+
 
 /* Kontainer untuk Judul dan Gambar Tambahan */
 .project-additional-images {
@@ -1456,20 +1353,165 @@ footer a:hover {
 
 /* Setiap Item Gambar Tambahan */
 .additional-image-item {
-    /* Menghapus style thumbnail lama:
-    width: 100px;  
-    height: 75px; 
-    object-fit: cover; 
-    border: 1px solid #ddd;
-    cursor: pointer; 
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    */
-
-    /* BARU: Membuat ukuran dan tampilan mirip dengan .project-main-image */
     max-width: 100%; /* Mengambil lebar penuh dari kontainer .project-media-column */
     height: auto;    /* Menjaga rasio aspek gambar */
     display: block;  /* Perilaku block untuk layout yang benar */
     border-radius: 8px; /* Samakan dengan gaya gambar utama */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Samakan dengan gaya gambar utama */
-    /* object-fit: cover; */ /* Biasanya tidak diperlukan jika height: auto dan rasio aspek ingin dijaga. Gunakan jika ingin crop. */
+}
+
+/* CSS untuk menyesuaikan ukuran gambar dan layout pada detail proyek (sudah ada, pastikan tidak duplikat) */
+/* .project-item-detailed-view { ... } */
+/* .project-item-detailed-view .project-media-column { ... } */
+/* .project-item-detailed-view .project-main-image { ... } */
+/* .project-item-detailed-view .project-content { ... } */
+
+
+/* === Pengaturan Dasar Header & Navigasi (INI BAGIAN UTAMA UNTUK HEADER) === */
+header {
+    background-color: #333; /* Warna latar header Anda */
+    color: white;
+    padding: 0 20px; /* Padding horizontal untuk header */
+    position: sticky; /* Membuat header tetap di atas saat scroll */
+    top: 0;
+    z-index: 1000; /* Pastikan header di atas konten lain */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ditambahkan dari definisi header awal untuk konsistensi */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, item lain di kanan */
+    align-items: center;
+    height: 70px; /* Tentukan tinggi header yang konsisten */
+    max-width: 1200px; /* Batas lebar maksimum untuk konten nav, opsional */
+    margin: 0 auto; /* Pusatkan nav jika ada max-width */
+}
+
+header nav .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6em; /* Ukuran font logo */
+    font-weight: bold;
+}
+
+header nav ul { /* Ini adalah #mainNav */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Default untuk tampilan desktop: menu horizontal */
+}
+
+header nav ul li {
+    margin-left: 25px; /* Jarak antar item menu desktop */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px; /* Padding link menu */
+    border-radius: 4px; /* Dari nav ul li a awal */
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom-color 0.3s ease; /* Gabungan transisi */
+    border-bottom: 2px solid transparent; /* Untuk efek hover/active pada burger menu style */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* Menggabungkan hover dan active dari style nav awal */
+    background-color: #575757; /* Dari nav ul li a:hover awal */
+    /* border-bottom-color: white; /* Contoh jika ingin border untuk active di desktop juga */
+}
+
+
+/* === Tombol Burger Menu === */
+.burger-menu {
+    display: none; /* Sembunyikan di desktop */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Area klik yang lebih besar */
+    z-index: 1005; /* Di atas menu dropdown jika bertumpuk */
+}
+
+.burger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Warna garis burger */
+    margin: 5px 0; /* Jarak antar garis */
+    transition: all 0.3s ease-in-out;
+}
+
+/* === Tampilan Mobile (Media Query untuk Burger Menu) === */
+@media (max-width: 768px) {
+    header nav ul#mainNav { /* Lebih spesifik ke #mainNav untuk dropdown */
+        display: none; /* Sembunyikan menu ul di mobile */
+        flex-direction: column; /* Susun item menu secara vertikal */
+        position: absolute;
+        top: 70px; /* Posisi dropdown tepat di bawah header (sesuai tinggi header) */
+        left: 0;
+        width: 100%;
+        background-color: #444; /* Warna background dropdown menu */
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        padding: 10px 0; /* Padding atas bawah untuk container ul */
+    }
+
+    header nav ul#mainNav.active { /* Ketika menu dropdown aktif */
+        display: flex; 
+    }
+
+    header nav ul#mainNav li {
+        margin: 0; /* Reset margin kiri */
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul#mainNav li a {
+        display: block; /* Link memenuhi lebar li */
+        padding: 15px 20px; /* Padding lebih besar untuk tap di mobile */
+        border-bottom: 1px solid #555; /* Garis pemisah tipis */
+        border-radius: 0; /* Hapus border-radius untuk tampilan list */
+    }
+    
+    header nav ul#mainNav li a:hover,
+    header nav ul#mainNav li a.active {
+        background-color: #575757; /* Konsisten dengan hover desktop */
+    }
+
+    header nav ul#mainNav li:last-child a {
+        border-bottom: none; /* Hapus border untuk item terakhir */
+    }
+
+    .burger-menu {
+        display: block; /* Tampilkan ikon burger di mobile */
+    }
+
+    /* Animasi ikon burger menjadi 'X' (silang) saat menu aktif */
+    .burger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Penyesuaian lain untuk mobile yang ada di blok @media (max-width: 768px) sebelumnya akan tetap berlaku jika tidak tumpang tindih dengan yang di atas */
+}
+
+/* Pastikan ID #projects-list h1 diganti menjadi #projects-page h1 jika ID section utama di projects.html adalah projects-page */
+/* Pastikan #other-activities-page h1 ditambahkan jika belum ada styling untuknya, contoh: */
+#other-activities-page h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Biru tua */
+    text-align: center; /* Biasanya judul halaman ditengah */
+}
+#other-activities-page .page-intro {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -5,46 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Portfolio Javas Alfreda</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* CSS untuk menyesuaikan ukuran gambar dan layout pada detail proyek */
-        .project-item-detailed-view {
-            display: flex; /* Menggunakan flexbox untuk layout utama */
-            flex-wrap: wrap; /* Memungkinkan item untuk wrap ke baris berikutnya jika tidak cukup ruang */
-            gap: 25px;       /* Jarak antara kolom gambar dan kolom teks, serta tombol kembali */
-            align-items: flex-start; /* Menjaga bagian atas item sejajar */
-        }
-
-        .project-item-detailed-view .back-to-grid-btn {
-            width: 100%; /* Tombol kembali mengambil lebar penuh */
-            order: -1; /* Memastikan tombol kembali selalu berada di paling atas */
-            margin-bottom: 10px; /* Sedikit jarak ke konten di bawahnya */
-        }
-
-        .project-item-detailed-view .project-media-column {
-            flex: 1 1 350px; /* Kolom gambar bisa mengecil hingga 350px dan membesar jika ada ruang */
-            /* Anda bisa menambahkan max-width jika ingin membatasi lebar maksimum kolom gambar, contoh: max-width: 500px; */
-        }
-
-        .project-item-detailed-view .project-main-image {
-            max-width: 100%; /* KUNCI: Membuat gambar responsif dan tidak melebihi lebar kontainernya */
-            height: auto;    /* KUNCI: Menjaga rasio aspek gambar */
-            display: block;  /* Menghilangkan spasi ekstra di bawah gambar (jika ada) dan membuatnya sebagai block-level element */
-            border-radius: 8px; /* Opsional: Memberikan sedikit lengkungan pada sudut gambar */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Opsional: Menambahkan sedikit bayangan untuk efek kedalaman */
-        }
-
-        .project-item-detailed-view .project-content {
-            flex: 2 1 500px; /* Kolom konten mengambil lebih banyak ruang (dua kali lipat dari kolom media) dan bisa mengecil hingga 500px */
-        }
-    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Javas Alfreda Belva Yoga Pratama</a>
+                <a href="index.html">Javas Alfreda</a>
             </div>
-            <ul>
+            <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="mainNav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
@@ -561,6 +534,18 @@
             // Panggil handleHashChange di akhir untuk memastikan state awal benar
             // terutama jika halaman dimuat dengan hash
              handleHashChange();
+        });
+    </script>
+    <script>
+        // JavaScript untuk Burger Menu (sama seperti di index.html)
+        const burgerMenu = document.getElementById('burgerMenu');
+        const mainNav = document.getElementById('mainNav');
+
+        burgerMenu.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            burgerMenu.classList.toggle('active');
+            const isExpanded = mainNav.classList.contains('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
         });
     </script>
 </body>

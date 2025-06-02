@@ -10,13 +10,18 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Javas Alfreda Belva Yoga Pratama</a>
+                <a href="other_activities.html">Javas Alfreda</a>
             </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
+            <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="mainNav">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="other_activities.html" class="active">Other Activities</a></li>
+                <li><a href="other_activities.html">Other Activities</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -316,5 +321,21 @@
             });
         });
     </script>
+<script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // JavaScript untuk Burger Menu
+    const burgerMenu = document.getElementById('burgerMenu');
+    const mainNav = document.getElementById('mainNav');
+
+    burgerMenu.addEventListener('click', () => {
+        mainNav.classList.toggle('active'); // Toggle kelas 'active' pada ul
+        burgerMenu.classList.toggle('active'); // Toggle kelas 'active' pada tombol burger untuk animasi 'X'
+
+        // Update ARIA attribute
+        const isExpanded = mainNav.classList.contains('active');
+        burgerMenu.setAttribute('aria-expanded', isExpanded);
+    });
+</script>
 </body>
 </html>

@@ -7,105 +7,120 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">Javas Alfreda Belva Yoga Pratama</a>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">Javas Alfreda</a>
+        </div>
+        <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul id="mainNav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="other_activities.html">Other Activities</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="hero">
+        <div class="hero-content">
+            <img src="images/foto-profil.jpg" alt="Foto Profil Javas Alfreda Belva Yoga Pratama" class="profile-pic-large">
+            <h1>Welcome! I'm Javas Alfreda Belva Yoga Pratama</h1>
+            <p class="tagline">Product Analyst, Data Analyst, and Data Governance Specialist</p>
+            <p class="summary">
+                ....
+            </p>
+            <a class="cta-button">Automation</a>
+            <a class="cta-button secondary">ETL / Data Pipeline</a>
+            <a class="cta-button">Data Quality Management</a>
+            <a class="cta-button secondary">Data Visualization</a>
+            <a class="cta-button">Project Management</a>
+            <a class="cta-button secondary">Data Security & Compliance</a>
+            <a class="cta-button">Business Intelligence</a>
+            <a class="cta-button secondary">Machine Learning</a>
+            <a class="cta-button">Fraud Analysis</a>
+        </div>
+    </section>
+
+    <section id="explore-works">
+        <div class="container">
+            <h2>Explore My Works</h2>
+            <div class="works-grid">
+                <a href="about.html" class="work-card"> <div class="work-card-icon">[📄]</div>
+                    <h3>Resume / CV</h3>
+                    <p>My professional experience and skills</p>
+                </a>
+                <a href="#" class="work-card"> <div class="work-card-icon">[🏆]</div>
+                    <h3>Achievements</h3>
+                    <p>Awards, recognitions and competitions</p>
+                </a>
+                <a href="projects.html" class="work-card"> <div class="work-card-icon">[💼]</div>
+                    <h3>Work Portfolio</h3>
+                    <p>Professional projects and contributions</p>
+                </a>
+                <a href="projects.html#dashboard-projects" class="work-card"> <div class="work-card-icon">[📊]</div> <h3>Dashboard Portfolio</h3>
+                    <p>Analytics and visualization projects</p>
+                </a>
+                <a href="other_activities.html" class="work-card"> <div class="work-card-icon">[❤️]</div>
+                    <h3>Other Activities</h3>
+                    <p>Mentoring, speaking and community work</p>
+                </a>
             </div>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="other_activities.html">Other Activities</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        </div>
+    </section>
 
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <img src="images/foto-profil.jpg" alt="Foto Profil Javas Alfreda Belva Yoga Pratama" class="profile-pic-large">
-                <h1>Welcome! I'm Javas Alfreda Belva Yoga Pratama</h1>
-                <p class="tagline">Product Analyst, Data Analyst, and Data Governance Specialist</p>
-                <p class="summary">
-                    ....
-                </p>
-                <a class="cta-button">Automation</a>
-                <a class="cta-button secondary">ETL / Data Pipeline</a>
-                <a class="cta-button">Data Quality Management</a>
-                <a class="cta-button secondary">Data Visualization</a>
-                <a class="cta-button">Project Management</a>
-                <a class="cta-button secondary">Data Security & Compliance</a>
-                <a class="cta-button">Business Intelligence</a>
-                <a class="cta-button secondary">Machine Learning</a>
-                <a class="cta-button">Fraud Analysis</a>
+    <section id="featured-projects-preview">
+        <h2>Key Projects</h2>
+        <div class="project-grid">
+            <div class="project-card-preview">
+                <img src="images/projects/project1.jpg" alt="Gambar project 1">
+                <h3>Analisis Sentimen Ulasan Produk</h3>
+                <p>Menganalisis sentimen dari ribuan ulasan produk untuk mengidentifikasi area perbaikan.</p>
+                <a href="projects.html#project1">Selengkapnya...</a>
             </div>
-        </section>
-
-        </section> <section id="explore-works">
-            <div class="container"> <h2>Explore My Works</h2>
-                <div class="works-grid">
-                    <a href="about.html" class="work-card"> <div class="work-card-icon">[📄]</div>
-                        <h3>Resume / CV</h3>
-                        <p>My professional experience and skills</p>
-                    </a>
-
-                    <a href="#" class="work-card"> <div class="work-card-icon">[🏆]</div>
-                        <h3>Achievements</h3>
-                        <p>Awards, recognitions and competitions</p>
-                    </a>
-
-                    <a href="projects.html" class="work-card"> <div class="work-card-icon">[💼]</div>
-                        <h3>Work Portfolio</h3>
-                        <p>Professional projects and contributions</p>
-                    </a>
-
-                    <a href="projects.html#dashboard-projects" class="work-card"> <div class="work-card-icon">[📊]</div> <h3>Dashboard Portfolio</h3>
-                        <p>Analytics and visualization projects</p>
-                    </a>
-
-                    <a href="other_activities.html" class="work-card"> <div class="work-card-icon">[❤️]</div>
-                        <h3>Other Activities</h3>
-                        <p>Mentoring, speaking and community work</p>
-                    </a>
-                </div>
+            <div class="project-card-preview">
+                <img src="images/projects/project2.jpg" alt="Gambar project 2">
+                <h3>Prediksi Churn Pelanggan</h3>
+                <p>Membangun model untuk memprediksi pelanggan yang berpotensi berhenti berlangganan.</p>
+                <a href="projects.html#project2">Selengkapnya...</a>
             </div>
-        </section>
+        </div>
+        <a href="projects.html" class="cta-button view-all-projects">Lihat Semua project</a>
+    </section>
+</main>
 
-        <section id="featured-projects-preview">
-            <h2>Key Projects</h2>
-            <div class="project-grid">
-                <div class="project-card-preview">
-                    <img src="images/projects/project1.jpg" alt="Gambar project 1">
-                    <h3>Analisis Sentimen Ulasan Produk</h3>
-                    <p>Menganalisis sentimen dari ribuan ulasan produk untuk mengidentifikasi area perbaikan.</p>
-                    <a href="projects.html#project1">Selengkapnya...</a>
-                </div>
-                <div class="project-card-preview">
-                    <img src="images/projects/project2.jpg" alt="Gambar project 2">
-                    <h3>Prediksi Churn Pelanggan</h3>
-                    <p>Membangun model untuk memprediksi pelanggan yang berpotensi berhenti berlangganan.</p>
-                    <a href="projects.html#project2">Selengkapnya...</a>
-                </div>
-                </div>
-             <a href="projects.html" class="cta-button view-all-projects">Lihat Semua project</a>
-        </section>
-    </main>
+<footer>
+    <p>&copy; <span id="currentYear"></span> Javas Alfreda Belva Yoga Pratama. All Rights Reserved.</p>
+    <p>
+        <a href="https://wa.me/6285878513900" target="_blank">WhatsApp</a> |
+        <a href="mailto:javasalfreda@gmail.com" target="_blank">Email</a> |
+        <a href="https://www.linkedin.com/in/javasalfredabyp/" target="_blank">LinkedIn</a> |
+        <a href="https://www.instagram.com/javasalfreda_byp/" target="_blank">Instagram</a> |
+        <a href="https://github.com/javasalfreda/" target="_blank">GitHub</a>
+    </p>
+</footer>
 
-    <footer>
-        <p>&copy; <span id="currentYear"></span> Javas Alfreda Belva Yoga Pratama. All Rights Reserved.</p>
-        <p>
-            <a href="https://wa.me/6285878513900" target="_blank">WhatsApp</a> |
-            <a href="mailto:javasalfreda@gmail.com" target="_blank">Email</a> |
-            <a href="https://www.linkedin.com/in/javasalfredabyp/" target="_blank">LinkedIn</a> |
-            <a href="https://www.instagram.com/javasalfreda_byp/" target="_blank">Instagram</a> |
-            <a href="https://github.com/javasalfreda/" target="_blank">GitHub</a>
-        </p>
-    </footer>
+<script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-    <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-    </script>
+    // JavaScript untuk Burger Menu
+    const burgerMenu = document.getElementById('burgerMenu');
+    const mainNav = document.getElementById('mainNav');
+
+    burgerMenu.addEventListener('click', () => {
+        mainNav.classList.toggle('active'); // Toggle kelas 'active' pada ul
+        burgerMenu.classList.toggle('active'); // Toggle kelas 'active' pada tombol burger untuk animasi 'X'
+
+        // Update ARIA attribute
+        const isExpanded = mainNav.classList.contains('active');
+        burgerMenu.setAttribute('aria-expanded', isExpanded);
+    });
+</script>
 </body>
 </html>
