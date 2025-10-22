@@ -190,15 +190,16 @@
                             <div class="project-content">
                                 <h2>BigQuery - GitLab Repository Framework</h2>
                                 <p><strong>Tools:</strong> BigQuery, GitLab, Data Governance</p>
-                                <p><strong>Description:</strong> This project establishes a framework to connect BigQuery with GitLab, enabling version control, review processes, and better governance of SQL scripts and data models. All changes are tracked to ensure safety, accountability, and compliance.</p>
+                                <p><strong>Description:</strong> This project establishes a framework to connect BigQuery with GitLab, enabling version control, review processes, and stronger data governance for SQL scripts and data models. All changes are tracked to ensure security, accountability, and compliance. The system also includes an audit mechanism to monitor all query activities and restrict high-risk commands such as <code>DROP</code>, <code>DELETE</code>, and <code>UPDATE</code> without proper approval.</p>
                                 <p><strong>Steps:</strong></p>
                                 <ul>
                                     <li>Integrate GitLab CI/CD with BigQuery environment.</li>
                                     <li>Enable peer-review process for SQL queries and schema updates.</li>
                                     <li>Automate deployments to production with approval gates.</li>
+                                    <li>Implement an audit system to log all query activities in BigQuery.</li>
                                     <li>Ensure version history and rollback capabilities for queries.</li>
                                 </ul>
-                                <p><strong>Results:</strong> Improved data governance, safer production deployment, and transparent review processes across the data team.</p>
+                                <p><strong>Results:</strong> Improved data governance, safer production deployments, full query activity auditing, and minimized risk of destructive changes through strict approval control and transparent review processes across the data team.</p>
                             </div>
                         </article>
 
